@@ -15,3 +15,5 @@ enum LoadFeedResult {
 protocol FeedLoader {
     func load(completio: (LoadFeedResult) -> Void)
 }
+
+
