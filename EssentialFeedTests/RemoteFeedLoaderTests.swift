@@ -13,7 +13,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
         //Init RemoteFeedLoader does not request data
-        XCTAssertNil(client.requestedURL)
+        XCTAssertEqual(client.requestedURLs, [])
     }
 
     func test_load_requestDataFromURL() {
@@ -22,7 +22,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
        
         sut.load()
         
-        XCTAssertEqual(client.requestedURL, url)
+        XCTAssertEqual(client.requestedURLs, [url])
     }
     
     func test_loadTwice_requestDataFromURLTwice() {
@@ -39,13 +39,13 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let url = URL(string: "https://abcv.com.vn")!
         let (sut, client) = makeSUT(url: url)
         
-        var capturedError: RemoteFeedLoader.Error?
-        sut.load { capturedError = $0 }
+        var capturedErrors = [RemoteFeedLoader.Error?]()
+        sut.load { capturedErrors.append($0) }
         
         let clientError = NSError(domain: "Test", code: 0)
-        client.completions[0](clientError)
+        client.complete(with: clientError)
         
-        XCTAssertEqual(capturedError, .connectivity)
+        XCTAssertEqual(capturedErrors, [.connectivity])
     }
     
     
@@ -57,16 +57,18 @@ final class RemoteFeedLoaderTests: XCTestCase {
     }
     
     private class HTTPClientSpy: HTTPClient {
+        private var messages = [(url: URL, completion: (Error) -> Void)]()
         
-        var requestedURL: URL?
-        var requestedURLs = [URL]()
-        var error: Error?
-        var completions = [(Error) -> Void]()
+        var requestedURLs: [URL] {
+            return messages.map { $0.url }
+        }
         
         func get(from url: URL, completion: @escaping (Error) -> Void) {
-            requestedURL = url
-            requestedURLs.append(url)
-            completions.append(completion)
+            messages.append((url, completion))
+        }
+        
+        func complete(with error: Error, at index: Int = 0) -> Void {
+            messages[index].completion(error)
         }
     }
 }
