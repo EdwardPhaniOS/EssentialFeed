@@ -83,7 +83,6 @@
 		BDF9F73929505BCD00859FCB = {
 			isa = PBXGroup;
 			children = (
-				BD279E4A2958176C0000EDA4 /* Feed API */,
 				BDF9F74529505BCE00859FCB /* EssentialFeed */,
 				BDF9F75929505F1A00859FCB /* EssentialFeedTests */,
 				BDF9F74429505BCE00859FCB /* Products */,
@@ -102,9 +101,10 @@
 		BDF9F74529505BCE00859FCB /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
-				BDF9F74629505BCE00859FCB /* EssentialFeed.h */,
-				BDF9F74729505BCE00859FCB /* EssentialFeed.docc */,
+				BD279E4A2958176C0000EDA4 /* Feed API */,
 				BDF9F75329505CFF00859FCB /* FeedFeature */,
+				BDF9F74729505BCE00859FCB /* EssentialFeed.docc */,
+				BDF9F74629505BCE00859FCB /* EssentialFeed.h */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
