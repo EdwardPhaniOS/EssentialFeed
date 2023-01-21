@@ -14,106 +14,10 @@
             filePath = "EssentialFeedTests/Feed API/URLSessionHTTPClientTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "startLoading()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AF73BAAA-0566-4810-A93D-8C7B147DDFC7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed API/URLSessionHTTPClientTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "resultErrorFor(data:response:error:file:line:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AF73BAAA-0566-4810-A93D-8C7B147DDFC7 - 83d2086c924888f5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTests.resultErrorFor(data: Swift.Optional&lt;Foundation.Data&gt;, response: Swift.Optional&lt;__C.NSURLResponse&gt;, error: Swift.Optional&lt;Swift.Error&gt;, file: Swift.StaticString, line: Swift.UInt) -&gt; Swift.Optional&lt;Swift.Error&gt;"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeedTests/Feed%20API/URLSessionHTTPClientTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "396">
-               </Location>
-               <Location
-                  uuid = "AF73BAAA-0566-4810-A93D-8C7B147DDFC7 - 83d2086c92488871"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.URLSessionHTTPClientTests.resultErrorFor(data: Swift.Optional&lt;Foundation.Data&gt;, response: Swift.Optional&lt;__C.NSURLResponse&gt;, error: Swift.Optional&lt;Swift.Error&gt;, file: Swift.StaticString, line: Swift.UInt) -&gt; Swift.Optional&lt;Swift.Error&gt;"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeedTests/Feed%20API/URLSessionHTTPClientTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "396">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E17EBB7B-BC00-409F-92B2-39422A07ECEC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeedTests/Feed API/URLSessionHTTPClientTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "resultErrorFor(data:response:error:file:line:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E17EBB7B-BC00-409F-92B2-39422A07ECEC - 7ada573cc7a9733d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (EssentialFeed.HTTPClientResult) -&gt; () in EssentialFeedTests.URLSessionHTTPClientTests.resultErrorFor(data: Swift.Optional&lt;Foundation.Data&gt;, response: Swift.Optional&lt;__C.NSURLResponse&gt;, error: Swift.Optional&lt;Swift.Error&gt;, file: Swift.StaticString, line: Swift.UInt) -&gt; Swift.Optional&lt;Swift.Error&gt;"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeedTests/Feed%20API/URLSessionHTTPClientTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "306">
-               </Location>
-               <Location
-                  uuid = "E17EBB7B-BC00-409F-92B2-39422A07ECEC - 7ada573cc7a970b1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (EssentialFeed.HTTPClientResult) -&gt; () in EssentialFeedTests.URLSessionHTTPClientTests.resultErrorFor(data: Swift.Optional&lt;Foundation.Data&gt;, response: Swift.Optional&lt;__C.NSURLResponse&gt;, error: Swift.Optional&lt;Swift.Error&gt;, file: Swift.StaticString, line: Swift.UInt) -&gt; Swift.Optional&lt;Swift.Error&gt;"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeedTests/Feed%20API/URLSessionHTTPClientTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
-                  offsetFromSymbolStart = "306">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,8 +30,8 @@
             filePath = "EssentialFeedTests/Feed API/URLSessionHTTPClientTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "stub(data:response:error:)"
             landmarkType = "7">
             <Locations>
