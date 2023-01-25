@@ -45,6 +45,8 @@
 /* Begin PBXFileReference section */
 		BD0D759F297FDEE60002352A /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0D75A1297FDEE60002352A /* EssentialFeedAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedAPIEndToEndTests.swift; sourceTree = "<group>"; };
+		BD110CA129813DC3000CB2A4 /* Demo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo.h; sourceTree = "<group>"; };
+		BD110CA229813DC3000CB2A4 /* Demo.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Demo.docc; sourceTree = "<group>"; };
 		BD279E4B295817870000EDA4 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 		BD63B2DA2973E787004E7CF0 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		BDB7712E297A9411008A7EF3 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
@@ -103,6 +105,15 @@
 			path = EssentialFeedAPIEndToEndTests;
 			sourceTree = "<group>";
 		};
+		BD110CA029813DC3000CB2A4 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				BD110CA129813DC3000CB2A4 /* Demo.h */,
+				BD110CA229813DC3000CB2A4 /* Demo.docc */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		BD279E4A2958176C0000EDA4 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +148,7 @@
 			children = (
 				BDF9F74529505BCE00859FCB /* EssentialFeed */,
 				BDF9F75929505F1A00859FCB /* EssentialFeedTests */,
+				BD110CA029813DC3000CB2A4 /* Demo */,
 				BDF9F74429505BCE00859FCB /* Products */,
 				BD0D758B297FDB1A0002352A /* Frameworks */,
 			);
