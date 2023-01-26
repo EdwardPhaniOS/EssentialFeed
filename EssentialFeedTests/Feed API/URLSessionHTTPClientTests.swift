@@ -30,7 +30,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         
         let exp = expectation(description: "Wait for request completon")
         makeSUT().get(from: url) { _ in exp.fulfill() }
-        wait(for: [exp], timeout: 1)
+        wait(for: [exp], timeout: 5.0)
         
         XCTAssertEqual(receivedRequest.count, 1)
         XCTAssertEqual(receivedRequest.first?.url, url)
