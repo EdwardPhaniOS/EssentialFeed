@@ -135,10 +135,17 @@
 			path = "Feed Cache";
 			sourceTree = "<group>";
 		};
-		BDB7712D297A93E0008A7EF3 /* Helpers */ = {
+		BD44AF34299FD72500013402 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				BDB7712E297A9411008A7EF3 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BDB7712D297A93E0008A7EF3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 		BDF9F75929505F1A00859FCB /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				BD44AF34299FD72500013402 /* Helpers */,
 				BD44AF31299FCBFB00013402 /* Feed Cache */,
 				BD0D75A0297FDEE60002352A /* EssentialFeedAPIEndToEndTests */,
 				BDB82BEA296175F6009728D1 /* Feed API */,
