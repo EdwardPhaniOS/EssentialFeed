@@ -29,7 +29,15 @@ class LocalFeedLoader {
     }
 }
 
-class FeedStore {
+protocol FeedStore {
+    typealias DeletionCompletion = (Error?) -> Void
+    typealias InsertCompletion = (Error?) -> Void
+    
+    func deleteCachedFeed(completion: @escaping DeletionCompletion)
+    func insert(_ items: [FeedItem], timeStamp: Date, completion: @escaping InsertCompletion)
+}
+
+class FeedStoreSpy: FeedStore {
     typealias DeletionCompletion = (Error?) -> Void
     typealias InsertCompletion = (Error?) -> Void
     
@@ -133,8 +141,8 @@ final class CacheFeedUseCaseTests: XCTestCase {
         }
     }
     
-    func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStore) {
-        let store = FeedStore()
+    func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
+        let store = FeedStoreSpy()
         let sut = LocalFeedLoader(store: store, currentDate: currentDate)
         trackForMemoryLeak(store, file: file, line: line)
         trackForMemoryLeak(sut, file: file, line: line)
