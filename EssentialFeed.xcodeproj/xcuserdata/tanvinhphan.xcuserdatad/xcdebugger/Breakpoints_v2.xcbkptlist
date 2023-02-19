@@ -78,9 +78,9 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "FeedStore"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "LocalFeedLoader"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
