@@ -117,7 +117,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
         
         let items = [uniqueItem(), uniqueItem()]
-        var receivedResults = [Error?]()
+        var receivedResults = [LocalFeedLoader.SaveResult]()
         sut?.save(items) { error in
             receivedResults.append(error)
         }
@@ -132,7 +132,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
         
         let items = [uniqueItem(), uniqueItem()]
-        var receivedResults = [Error?]()
+        var receivedResults = [LocalFeedLoader.SaveResult]()
         sut?.save(items) { error in
             receivedResults.append(error)
         }
@@ -153,7 +153,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
     }
     
     func expect(_ sut: LocalFeedLoader, toCompleteWithError error: Error?, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
-        var receivedErorr: Error?
+        var receivedErorr: LocalFeedLoader.SaveResult = nil
         let exp = expectation(description: "Wait for save completion")
         
         let items = [uniqueItem(), uniqueItem()]
