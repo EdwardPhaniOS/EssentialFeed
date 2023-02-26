@@ -78,10 +78,10 @@
             filePath = "EssentialFeedTests/Feed Cache/CacheFeedUseCaseTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "DeletionCompletion"
-            landmarkType = "16">
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "FeedStore"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
