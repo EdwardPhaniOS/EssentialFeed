@@ -46,6 +46,10 @@ class FeedStoreSpy: FeedStore {
         insertionCompletions[index](nil)
     }
     
+    func completeRetrievalSuccessfully(at index: Int = 0) {
+        retrievalCompletions[index](nil)
+    }
+    
     func insert(_ feed: [LocalFeedImage], timeStamp: Date, completion: @escaping InsertCompletion) {
         insertionCompletions.append(completion)
         receivedMessage.append(.insert(feed, timeStamp))

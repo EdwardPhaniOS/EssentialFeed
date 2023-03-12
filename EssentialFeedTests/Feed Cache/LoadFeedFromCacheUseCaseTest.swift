@@ -30,8 +30,14 @@ class LoadFeedFromCacheUseCaseTest: XCTestCase {
         let exp = expectation(description: "Wait for load completion")
         
         var receivedError: Error?
-        sut.load { error in
-            receivedError = error
+        sut.load { result in
+            switch result {
+            case let .failure(error):
+                receivedError = error
+            default:
+                XCTFail("Expected failure, got \(result) instead")
+            }
+            
             exp.fulfill()
         }
         
@@ -40,6 +46,28 @@ class LoadFeedFromCacheUseCaseTest: XCTestCase {
         
         XCTAssertEqual(retrievalError, receivedError as NSError?)
     }
+    
+//    func test_load_deliversNoImageOnEmptyCache() {
+//        let (sut, store) = makeSUT()
+//        let exp = expectation(description: "Wait for load completion")
+//
+//        var receivedImages = [FeedImage]()
+//        sut.load { result in
+//            switch result {
+//            case let .success(images):
+//                receivedImages = images
+//            default:
+//                XCTFail("Expected empty images list, got \(result) instead")
+//            }
+//            
+//            exp.fulfill()
+//        }
+//
+//        store.completeRetriveal(with: retrievalError)
+//        wait(for: [exp], timeout: 2.0)
+//
+//        XCTAssertEqual(receivedImages, [])
+//    }
     
     func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
         let store = FeedStoreSpy()
