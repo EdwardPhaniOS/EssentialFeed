@@ -10,7 +10,7 @@ import Foundation
 public enum RetrieveCachedFeedResult {
     case empty
     case found(feed: [LocalFeedImage], timestamp: Date)
-    case error(Error)
+    case failure(Error)
 }
 
 public protocol FeedStore {
