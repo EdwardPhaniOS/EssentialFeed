@@ -78,8 +78,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CodableFeedStoreTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "setUp()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CodableFeedStoreTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "retrieve(completion:)"
             landmarkType = "7">
          </BreakpointContent>
