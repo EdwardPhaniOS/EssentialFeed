@@ -90,7 +90,7 @@ class CodableFeedStoreTests: XCTestCase {
         insert((feed, timestamp), to: sut)
     }
     
-    func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
+    func test_retrieve_deliversFoundValueOnNonEmptyCache() {
         let sut = makeSUT()
         let feed = uniqueItemFeed().local
         let timestamp = Date()
