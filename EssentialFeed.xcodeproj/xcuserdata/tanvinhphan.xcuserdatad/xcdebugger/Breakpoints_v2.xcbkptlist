@@ -126,8 +126,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CodableFeedStoreTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "test_delete_deliversErrorOnDeletionError()"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CodableFeedStoreTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "makeSUT(storeURL:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "EssentialFeedTests/Feed Cache/CodableFeedStoreTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "deleteCache(from:)"
             landmarkType = "7">
          </BreakpointContent>
