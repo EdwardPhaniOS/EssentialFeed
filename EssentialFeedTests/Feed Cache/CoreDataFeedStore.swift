@@ -17,15 +17,51 @@ public final class CoreDataFeedStore: FeedStore {
         context = container.newBackgroundContext()
     }
     
-    public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
-        
+    public func retrieve(completion: @escaping RetrieveCompletion) {
+        let context = self.context
+        context.perform {
+            do {
+                let request = NSFetchRequest<ManagedCache>(entityName: ManagedCache.entity().name!)
+                request.returnsObjectsAsFaults = false
+                if let cache = try context.fetch(request).first {
+                    completion(.found(feed: cache.feed
+                        .compactMap({ $0 as? ManagedFeedImage })
+                        .map({ LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, imageURL: $0.url)
+                    }), timestamp: cache.timestamp))
+                } else {
+                    completion(.empty)
+                }
+                
+            } catch {
+                completion(.failure(error))
+            }
+        }
     }
     
     public func insert(_ feed: [EssentialFeed.LocalFeedImage], timestamp: Date, completion: @escaping InsertCompletion) {
-        
+        let context = self.context
+        context.perform {
+            do {
+                let managedCache = ManagedCache(context: context)
+                managedCache.timestamp = timestamp
+                managedCache.feed = NSOrderedSet(array: feed.map({ local in
+                    let managed = ManagedFeedImage(context: context)
+                    managed.id = local.id
+                    managed.imageDescription = local.description
+                    managed.location = local.location
+                    managed.url = local.url
+                    return managed
+                }))
+                
+                try context.save()
+                completion(nil)
+            } catch {
+                completion(error)
+            }
+        }
     }
     
-    public func retrieve(completion: @escaping RetrieveCompletion) {
+    public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
         
     }
 }
@@ -62,15 +98,19 @@ private extension NSManagedObjectModel {
     }
 }
 
-private class ManagedCache: NSManagedObject {
-    @NSManaged var timestamp: Date
-    @NSManaged var feed: NSOrderedSet
-}
 
-private class ManagedFeedImage: NSManagedObject {
-    @NSManaged var id: UUID
-    @NSManaged var imageDescription: String?
-    @NSManaged var location: String?
-    @NSManaged var ur: URL
-    @NSManaged var cache: ManagedCache
-}
+
+//@objc(ManagedCache)
+//private class ManagedCache: NSManagedObject {
+//    @NSManaged var timestamp: Date
+//    @NSManaged var feed: NSOrderedSet
+//}
+//
+//@objc(ManagedFeedImage)
+//private class ManagedFeedImage: NSManagedObject {
+//    @NSManaged var id: UUID
+//    @NSManaged var imageDescription: String?
+//    @NSManaged var location: String?
+//    @NSManaged var url: URL
+//    @NSManaged var cache: ManagedCache
+//}
