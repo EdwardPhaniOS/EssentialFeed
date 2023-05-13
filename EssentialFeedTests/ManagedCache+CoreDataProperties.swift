@@ -24,6 +24,11 @@ extension ManagedCache {
         return try context.fetch(request).first
     }
     
+    static func newUniqueInstance(in context: NSManagedObjectContext) throws -> ManagedCache {
+        try find(in: context).map(context.delete(_:))
+        return ManagedCache(context: context)
+    }
+    
     public var localFeed: [LocalFeedImage] {
         return feed.compactMap({ $0 as? ManagedFeedImage }).map({ LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, imageURL: $0.url)})
     }
