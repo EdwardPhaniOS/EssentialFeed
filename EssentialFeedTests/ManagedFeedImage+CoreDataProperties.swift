@@ -30,7 +30,7 @@ extension ManagedFeedImage {
             managed.location = local.location
             managed.url = local.url
             return managed
-        })
+        }))
     }
     
     var local: LocalFeedImage {
