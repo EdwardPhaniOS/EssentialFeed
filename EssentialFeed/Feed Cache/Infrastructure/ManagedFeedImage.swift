@@ -21,6 +21,9 @@ public class ManagedFeedImage: NSManagedObject {
         return NSFetchRequest<ManagedFeedImage>(entityName: "ManagedFeedImage")
     }
 
+}
+
+extension ManagedFeedImage {
     public static func images(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
         return NSOrderedSet(array: localFeed.map({ local in
             let managed = ManagedFeedImage(context: context)
