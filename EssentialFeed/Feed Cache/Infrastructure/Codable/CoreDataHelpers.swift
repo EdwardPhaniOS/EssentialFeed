@@ -13,7 +13,7 @@ internal extension NSPersistentContainer {
         case failedToLoadPersistentStores(Swift.Error)
     }
     
-    static func load(model name: String, url: URL, in bundle: Bundle) throws -> NSPersistentContainer {
+    public static func load(model name: String, url: URL, in bundle: Bundle) throws -> NSPersistentContainer {
         guard let model = NSManagedObjectModel.with(name: name, in: bundle) else {
             throw LoadingError.modelNotFound
         }
