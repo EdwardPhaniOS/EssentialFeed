@@ -323,5 +323,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5BCF220-E7CA-4216-9F87-FF1CC206A314"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialFeed/Feed Cache/Infrastructure/CoreDataFeedStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "init(storeURL:bundle:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B5BCF220-E7CA-4216-9F87-FF1CC206A314 - 15cd2ea21dd35f2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeedCacheIntegrationTests.CoreDataFeedStore.init(storeURL: Foundation.URL, bundle: __C.NSBundle) throws -&gt; EssentialFeedCacheIntegrationTests.CoreDataFeedStore"
+                  moduleName = "EssentialFeedCacheIntegrationTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeed/Feed%20Cache/Infrastructure/CoreDataFeedStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  uuid = "B5BCF220-E7CA-4216-9F87-FF1CC206A314 - 30521c056ef1ad45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeedTests.CoreDataFeedStore.init(storeURL: Foundation.URL, bundle: __C.NSBundle) throws -&gt; EssentialFeedTests.CoreDataFeedStore"
+                  moduleName = "EssentialFeedTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeed/Feed%20Cache/Infrastructure/CoreDataFeedStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "95">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
