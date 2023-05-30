@@ -31,8 +31,7 @@
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BDB12B5B2A19EB9A005DAA1C"

@@ -12,32 +12,17 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
         setupEmptyStoreState()
     }
     
     override func tearDown() {
         super.tearDown()
-        
         undoStoreSideEffects()
     }
 
     func test_load_deliversNoItemsOnEmptyCache() {
         let sut = makeSUT()
-        
-        let exp = expectation(description: "Wait for load completion")
-        sut.load { result in
-            switch result {
-            case let .success(imageFeed):
-                XCTAssertEqual(imageFeed, [], "Expected empty feed")
-                
-            case let .failure(error):
-                XCTFail("Expected successful feed result, got \(error) instead")
-            }
-            exp.fulfill()
-        }
-        
-        wait(for: [exp], timeout: 5.0)
+        expect(sut, toLoad: [])
     }
     
     func test_load_deliversItemsSavedOnASeparateIntance() {
@@ -45,25 +30,50 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
         let sutToPerformLoad = makeSUT()
         let feed = uniqueItemFeed().models
         
-        let saveExp = expectation(description: "Wait for save completion")
+        let exp = expectation(description: "Wait for save completion")
         sutToPerformSave.save(feed) { saveError in
             XCTAssertNil(saveError, "Expected to save feed successfully")
-            saveExp.fulfill()
+            exp.fulfill()
         }
         
-        let loadExt = expectation(description: "Wait for load completion")
-        sutToPerformLoad.load { result in
+        expect(sutToPerformLoad, toLoad: feed)
+    }
+    
+    func test_save_overridesItemsSavedOnASeparateIntance() {
+        let sutToPerformFirstSave = makeSUT()
+        let sutToPerformLastSave = makeSUT()
+        let sutToPerformLoad = makeSUT()
+        let firstFeed = uniqueItemFeed().models
+        let secondFeed = uniqueItemFeed().models
+        
+        let firstSavExp = expectation(description: "Wait for first save completion")
+        sutToPerformFirstSave.save(firstFeed) { saveError in
+            XCTAssertNil(saveError, "Expected to save feed successfully")
+            firstSavExp.fulfill()
+        }
+        
+        let secondSaveExp = expectation(description: "Wait for first save completion")
+        sutToPerformLastSave.save(secondFeed) { saveError in
+            XCTAssertNil(saveError, "Expected to second save successfully")
+            secondSaveExp.fulfill()
+        }
+        wait(for: [firstSavExp, secondSaveExp], timeout: 1.0)
+        
+        expect(sutToPerformLoad, toLoad: secondFeed)
+    }
+    
+    func expect(_ sut: LocalFeedLoader, toLoad feed: [FeedImage]) {
+        let exp = expectation(description: "Wait for load completion")
+        sut.load { result in
             switch result {
             case let .success(imageFeed):
-                XCTAssertEqual(imageFeed, [], "Expected empty feed")
-                
+                XCTAssertEqual(imageFeed, feed, "Expected empty feed")
             case let .failure(error):
                 XCTFail("Expected successful feed result, got \(error) instead")
             }
-            loadExt.fulfill()
+            exp.fulfill()
         }
-        
-        wait(for: [saveExp, loadExt], timeout: 5.0)
+        wait(for: [exp], timeout: 1.0)
     }
     
     //MARK: - Helpers
