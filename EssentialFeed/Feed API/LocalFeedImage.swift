@@ -13,11 +13,11 @@ public struct LocalFeedImage: Equatable, Codable {
     public let location: String?
     public let url: URL
     
-    public init(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) {
+    public init(id: UUID, description: String? = nil, location: String? = nil, url: URL) {
         self.id = id
         self.description = description
         self.location = location
-        self.url = imageURL
+        self.url = url
     }
 }
 

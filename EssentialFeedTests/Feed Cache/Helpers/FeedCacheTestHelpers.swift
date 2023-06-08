@@ -10,7 +10,7 @@ import EssentialFeed
 
 func uniqueItemFeed() -> (models: [FeedImage], local: [LocalFeedImage]) {
     let items = [uniqueImage(), uniqueImage()]
-    let local = items.map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, imageURL: $0.imageURL) }
+    let local = items.map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.imageURL) }
     return (items, local)
 }
 
