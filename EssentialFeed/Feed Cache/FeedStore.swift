@@ -7,21 +7,12 @@
 
 import Foundation
 
-public struct CachedFeed {
-    public let feed: [LocalFeedImage]
-    public let timestamp: Date
-    
-    public init(feed: [LocalFeedImage], timestamp: Date) {
-        self.feed = feed
-        self.timestamp = timestamp
-    }
-}
-
 public protocol FeedStore {
     
     typealias DeletionCompletion = (Error?) -> Void
     typealias InsertCompletion = (Error?) -> Void
     
+    typealias CachedFeed = (feed: [LocalFeedImage], timestamp: Date)
     typealias RetrievalResult = Swift.Result<CachedFeed?, Error>
     typealias RetrieveCompletion = (RetrievalResult) -> Void
     
