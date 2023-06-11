@@ -7,17 +7,23 @@
 
 import Foundation
 
-public typealias RetrieveCachedFeedResult = Swift.Result<CachedFeed, Error>
-
-public enum CachedFeed {
-    case empty
-    case found(feed: [LocalFeedImage], timestamp: Date)
+public struct CachedFeed {
+    public let feed: [LocalFeedImage]
+    public let timestamp: Date
+    
+    public init(feed: [LocalFeedImage], timestamp: Date) {
+        self.feed = feed
+        self.timestamp = timestamp
+    }
 }
 
 public protocol FeedStore {
+    
     typealias DeletionCompletion = (Error?) -> Void
     typealias InsertCompletion = (Error?) -> Void
-    typealias RetrieveCompletion = (RetrieveCachedFeedResult) -> Void
+    
+    typealias RetrievalResult = Swift.Result<CachedFeed?, Error>
+    typealias RetrieveCompletion = (RetrievalResult) -> Void
     
     /// The completion handler can be invoked in any thread
     /// Clients are responsible to dispatch to aprropriate threads, if needed
