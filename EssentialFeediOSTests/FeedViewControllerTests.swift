@@ -9,31 +9,6 @@ import XCTest
 import EssentialFeed
 import UIKit
 
-final class FeedViewController: UITableViewController {
-    
-    private var loader: FeedLoader?
-    
-    convenience init(loader: FeedLoader) {
-        self.init()
-        self.loader = loader
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
-        load()
-    }
-    
-    @objc private func load() {
-        refreshControl?.beginRefreshing()
-        loader?.load(completion: { [weak self] _ in
-            self?.refreshControl?.endRefreshing()
-        })
-    }
-}
-
 final class FeedViewControllerTests: XCTestCase {
     
     func test_loadFeedActions_requestFeedFromLoader() {
@@ -42,7 +17,6 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(loader.loadCallCount, 0, "Expected no loading request before view is loaded")
         
         sut.loadViewIfNeeded()
-        
         XCTAssertEqual(loader.loadCallCount, 1, "Expected a loading request once view is loaded")
         
         sut.simulateUserInitiatedFeedReload()
