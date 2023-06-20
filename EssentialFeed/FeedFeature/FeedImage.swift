@@ -13,7 +13,7 @@ public struct FeedImage: Equatable {
     public let location: String?
     public let url: URL
     
-    init(id: UUID, description: String? = nil, location: String? = nil, url: URL) {
+    public init(id: UUID, description: String? = nil, location: String? = nil, url: URL) {
         self.id = id
         self.description = description
         self.location = location
