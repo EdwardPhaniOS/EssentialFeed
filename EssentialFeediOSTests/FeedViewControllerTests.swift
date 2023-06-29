@@ -59,7 +59,6 @@ final class FeedViewControllerTests: XCTestCase {
         
         sut.simulateFeedImageViewNotVisible(at: 1)
         XCTAssertEqual(loader.cancelledImageURLs, [image0.url, image1.url], "Expected two cancelled image URL requests once second image is also not visiable anymore")
-        
     }
     
     func test_loadingFeedIndicator_isVisiableWhileLoadingFeed() {
@@ -108,7 +107,7 @@ final class FeedViewControllerTests: XCTestCase {
         loader.completeFeedLoadingWithError(at: 1)
         assertThat(sut, isRendering: [image0])
     }
-   
+    
     //MARK: - Helers
     //
     func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
@@ -169,16 +168,25 @@ final class FeedViewControllerTests: XCTestCase {
         }
         
         //MARK: - FeedImageDataLoader
-        //
+        
+        private struct TaskSpy: FeedImageDataLoaderTask {
+            let cancelCallback: () -> Void
+            func cancel() {
+                cancelCallback()
+            }
+        }
+        
         private(set) var loadedImageURLs = [URL]()
         private(set) var cancelledImageURLs = [URL]()
         
-        func loadImageData(from url: URL) {
+        func loadImageData(from url: URL) -> FeedImageDataLoader {
             loadedImageURLs.append(url)
         }
         
         func cancelImageDataLoad(from url: URL) {
-            cancelledImageURLs.append(url)
+            TaskSpy { [weak self] in
+                self?.cancelledImageURLs.append(url)
+            }
         }
     }
 }
