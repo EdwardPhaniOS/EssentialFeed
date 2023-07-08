@@ -12,4 +12,12 @@ public final class FeedImageCell: UITableViewCell {
     public let locationLabel = UILabel()
     public let descriptionLabel = UILabel()
     public let feedImageContainer = UIView()
+    public let feedImageView = UIImageView()
+    
+    public var imageData: Data?
+    
+    func setFeedImage(imageData: Data?) {
+        self.imageData = imageData
+        self.feedImageView.image = imageData.map(UIImage.init) ?? nil
+    }
 }
