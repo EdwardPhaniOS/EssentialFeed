@@ -20,13 +20,6 @@ public final class FeedImageCell: UITableViewCell {
         return button
     }()
     
-    public var imageData: Data?
-    
-    func setFeedImage(imageData: Data?) {
-        self.imageData = imageData
-        self.feedImageView.image = imageData.map(UIImage.init) ?? nil
-    }
-    
     var onRetry: (() -> Void)?
     
     @objc private func retryButtonTapped() {
