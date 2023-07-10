@@ -239,6 +239,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD0979042A5C56BB0075EBD8 /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				BD7A56C52A5C32420087BEAF /* Controllers */,
+				BD7A56C62A5C32520087BEAF /* Views */,
+			);
+			path = "Feed UI";
+			sourceTree = "<group>";
+		};
 		BD0D758B297FDB1A0002352A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,8 +321,7 @@
 		BD59CD222A41FF6B0098ED96 /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
-				BD7A56C52A5C32420087BEAF /* Controllers */,
-				BD7A56C62A5C32520087BEAF /* Views */,
+				BD0979042A5C56BB0075EBD8 /* Feed UI */,
 			);
 			path = EssentialFeediOS;
 			sourceTree = "<group>";
