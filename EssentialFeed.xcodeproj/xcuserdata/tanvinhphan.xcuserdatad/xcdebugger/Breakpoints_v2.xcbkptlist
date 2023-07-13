@@ -822,54 +822,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "145054C3-C1DA-4D9A-BD57-D783A04C9F91"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeediOS/Feed UI/FeedUIComposer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "feedComposeWith(feedLoader:imageLoader:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "145054C3-C1DA-4D9A-BD57-D783A04C9F91 - 9b2db79199460d12"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (EssentialFeed.FeedImage) -&gt; EssentialFeediOSTests.FeedImageCellController in closure #1 (Swift.Array&lt;EssentialFeed.FeedImage&gt;) -&gt; () in static EssentialFeediOSTests.FeedUIComposer.feedComposeWith(feedLoader: EssentialFeed.FeedLoader, imageLoader: EssentialFeediOSTests.FeedImageDataLoader) -&gt; EssentialFeediOSTests.FeedViewController"
-                  moduleName = "EssentialFeediOSTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Feed%20UI/FeedUIComposer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "125">
-               </Location>
-               <Location
-                  uuid = "145054C3-C1DA-4D9A-BD57-D783A04C9F91 - 192f4573552ea066"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (EssentialFeed.FeedImage) -&gt; EssentialFeediOS.FeedImageCellController in closure #1 (Swift.Array&lt;EssentialFeed.FeedImage&gt;) -&gt; () in static EssentialFeediOS.FeedUIComposer.feedComposeWith(feedLoader: EssentialFeed.FeedLoader, imageLoader: EssentialFeediOS.FeedImageDataLoader) -&gt; EssentialFeediOS.FeedViewController"
-                  moduleName = "EssentialFeediOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Feed%20UI/FeedUIComposer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "125">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "455E7606-CE36-4AE7-AE53-387811D5AAC6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
