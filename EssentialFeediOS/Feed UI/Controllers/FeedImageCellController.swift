@@ -10,7 +10,7 @@ import EssentialFeed
 
 final class FeedImageCellController {
     
-    private var task: FeedImageDataLoaderTask?
+    private(set) var task: FeedImageDataLoaderTask?
     private let model: FeedImage
     private let imageLoader: FeedImageDataLoader
     
@@ -27,8 +27,20 @@ final class FeedImageCellController {
         cell.descriptionLabel.text = model.description
         cell.feedImageView.image = nil
         cell.feedImageRetryButton.isHidden = true
+        
+        loadImage(forCell: cell)
+        
+        return cell
+    }
+    
+    func preload() {
+        task = imageLoader.loadImageData(from: model.url, completion: { _ in })
+    }
+    
+    func loadImage(forCell cell: UITableViewCell) {
+        guard let cell = cell as? FeedImageCell else { return }
+        
         cell.feedImageContainer.startShimmering()
-       
         let loadImage = { [weak self, weak cell] in
             guard let self = self else { return }
             
@@ -43,12 +55,6 @@ final class FeedImageCellController {
         
         cell.onRetry = loadImage
         loadImage()
-        
-        return cell
-    }
-    
-    func preload() {
-        task = imageLoader.loadImageData(from: model.url, completion: { _ in })
     }
     
     func cancelLoad() {
