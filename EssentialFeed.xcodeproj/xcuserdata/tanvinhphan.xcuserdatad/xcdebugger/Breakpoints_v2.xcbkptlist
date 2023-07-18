@@ -822,54 +822,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "455E7606-CE36-4AE7-AE53-387811D5AAC6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeediOS/Feed UI/Controllers/FeedRefreshViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "refresh()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "455E7606-CE36-4AE7-AE53-387811D5AAC6 - 34bb0fa1bfe2e553"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;EssentialFeed.FeedImage&gt;, Swift.Error&gt;) -&gt; () in EssentialFeediOSTests.FeedRefreshViewController.refresh() -&gt; ()"
-                  moduleName = "EssentialFeediOSTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Feed%20UI/Controllers/FeedRefreshViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "153">
-               </Location>
-               <Location
-                  uuid = "455E7606-CE36-4AE7-AE53-387811D5AAC6 - a120d603ddee818"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;EssentialFeed.FeedImage&gt;, Swift.Error&gt;) -&gt; () in EssentialFeediOS.FeedRefreshViewController.refresh() -&gt; ()"
-                  moduleName = "EssentialFeediOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Feed%20UI/Controllers/FeedRefreshViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "153">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AE8EB090-AE68-4F6A-9606-CD2802B287C0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
