@@ -36,8 +36,8 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
     
     public override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cellController = cellController(forRowAt: indexPath)
-        if cellController.task == nil {
-            cellController.loadImage(forCell: cell)
+        if cellController.viewModel.needLoadImage {
+            cellController.preload()
         }
     }
     
