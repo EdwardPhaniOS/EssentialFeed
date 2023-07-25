@@ -5,7 +5,6 @@
 //  Created by Tan Vinh Phan on 23/07/2023.
 //
 
-import Foundation
 import EssentialFeed
 
 protocol FeedImageView {
