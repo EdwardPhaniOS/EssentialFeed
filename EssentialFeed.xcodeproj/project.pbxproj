@@ -27,9 +27,7 @@
 		BD59CD212A41F3CB0098ED96 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB7712E297A9411008A7EF3 /* XCTestCase+MemoryLeakTracking.swift */; };
 		BD59CD242A41FF960098ED96 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD59CD232A41FF960098ED96 /* FeedViewController.swift */; };
 		BD6027702A5D7FD900C4AC96 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60276F2A5D7FD900C4AC96 /* FeedImageDataLoader.swift */; };
-		BD6027732A5D808A00C4AC96 /* FeedRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6027722A5D808A00C4AC96 /* FeedRefreshViewController.swift */; };
 		BD6027752A5D83C300C4AC96 /* FeedImageCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6027742A5D83C300C4AC96 /* FeedImageCellController.swift */; };
-		BD6027762A5D996700C4AC96 /* FeedRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6027722A5D808A00C4AC96 /* FeedRefreshViewController.swift */; };
 		BD6027772A5D999D00C4AC96 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60276F2A5D7FD900C4AC96 /* FeedImageDataLoader.swift */; };
 		BD6027782A5D99B400C4AC96 /* FeedImageCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6027742A5D83C300C4AC96 /* FeedImageCellController.swift */; };
 		BD6235CD2A680E2E00B70E7F /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6235CC2A680E2E00B70E7F /* FeedImageViewModel.swift */; };
@@ -163,7 +161,6 @@
 		BD44AF32299FCC3200013402 /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		BD59CD232A41FF960098ED96 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BD60276F2A5D7FD900C4AC96 /* FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoader.swift; sourceTree = "<group>"; };
-		BD6027722A5D808A00C4AC96 /* FeedRefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRefreshViewController.swift; sourceTree = "<group>"; };
 		BD6027742A5D83C300C4AC96 /* FeedImageCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCellController.swift; sourceTree = "<group>"; };
 		BD6235CC2A680E2E00B70E7F /* FeedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageViewModel.swift; sourceTree = "<group>"; };
 		BD6235CF2A6D18DF00B70E7F /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
@@ -412,7 +409,6 @@
 			children = (
 				BD59CD232A41FF960098ED96 /* FeedViewController.swift */,
 				BD6027742A5D83C300C4AC96 /* FeedImageCellController.swift */,
-				BD6027722A5D808A00C4AC96 /* FeedRefreshViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -826,7 +822,6 @@
 				BD7A56D52A5C4DD00087BEAF /* UIButton+TestHelpers.swift in Sources */,
 				BD7A56CA2A5C4A510087BEAF /* UIImage+TestHelpers.swift in Sources */,
 				BD6235D92A70274B00B70E7F /* FeedPresenter.swift in Sources */,
-				BD6027762A5D996700C4AC96 /* FeedRefreshViewController.swift in Sources */,
 				BDA01CFD2A47EDC800D1FEB0 /* FeedViewController.swift in Sources */,
 				BD7A56C92A5C4A310087BEAF /* FeedViewController+TestHelpers.swift in Sources */,
 				BD6235D82A70273C00B70E7F /* FeedImageViewModel.swift in Sources */,
@@ -909,7 +904,6 @@
 				BD6235D02A6D18DF00B70E7F /* FeedPresenter.swift in Sources */,
 				BD6027702A5D7FD900C4AC96 /* FeedImageDataLoader.swift in Sources */,
 				BD6235D62A6FFA9200B70E7F /* FeedViewModel.swift in Sources */,
-				BD6027732A5D808A00C4AC96 /* FeedRefreshViewController.swift in Sources */,
 				BD6235D42A6FFA7700B70E7F /* FeedLoadingViewModel.swift in Sources */,
 				BD40AEFA2A559F43001B16CD /* UIView+Shimmering.swift in Sources */,
 				BD6235D22A6D2B7600B70E7F /* FeedImagePresenter.swift in Sources */,
