@@ -119,6 +119,13 @@
                                         <constraint firstItem="vkU-4N-BCD" firstAttribute="top" secondItem="8aZ-At-h1c" secondAttribute="topMargin" priority="999" constant="6" id="jWe-s5-JiS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="byI-Rc-PiM" id="so5-Lv-9Sa"/>
+                                    <outlet property="feedImageContainer" destination="UTq-Hl-wV2" id="8KI-o0-bOC"/>
+                                    <outlet property="feedImageView" destination="rW9-0y-xmk" id="dtb-Ba-9tC"/>
+                                    <outlet property="locationContainer" destination="yXx-Ju-uHC" id="qvQ-6l-0o3"/>
+                                    <outlet property="locationLabel" destination="T5c-zb-ln0" id="jiq-Ky-NsZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

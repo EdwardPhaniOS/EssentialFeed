@@ -31,12 +31,15 @@ extension FeedViewController {
         return feedImageView(at: index) as? FeedImageCell
     }
     
-    func simulateFeedImageViewNotVisible(at row: Int = 0) {
+    @discardableResult
+    func simulateFeedImageViewNotVisible(at row: Int = 0) -> FeedImageCell?{
         let view = simulateFeedImageViewVisible(at: row)
         
         let delegate = tableView.delegate
         let index = IndexPath(row: row, section: feedImagesSection)
         delegate?.tableView?(tableView, didEndDisplaying: view!, forRowAt: index)
+        
+        return view
     }
     
     func isShowingLoadingIndicator() -> Bool {
