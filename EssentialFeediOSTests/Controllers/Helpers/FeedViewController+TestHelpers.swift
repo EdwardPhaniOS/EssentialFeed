@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EssentialFeediOS
 
 extension FeedViewController {
     func simulateUserInitiatedFeedReload() {
