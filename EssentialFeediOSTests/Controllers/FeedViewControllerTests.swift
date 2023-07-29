@@ -243,7 +243,7 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(loader.cancelledImageURLs, [image0.url, image1.url], "Expected second cancelled image URL request once second view is not near visible anymore")
     }
     
-    func test_feedImageView_doesNotRenderLoadedImageWhenNotVisiableAnymore() {
+    func test_feedImageView_doesNotRenderLoadedImageWhenNotVisibleAnymore() {
         let (sut, loader) = makeSUT()
         sut.loadViewIfNeeded()
         
