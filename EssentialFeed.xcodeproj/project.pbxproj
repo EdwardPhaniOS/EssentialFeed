@@ -188,6 +188,8 @@
 		BD7480072A7E0CAB00012200 /* FeedUIIntegrationTests+Localizaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+Localizaton.swift"; sourceTree = "<group>"; };
 		BD74800A2A7E4FEC00012200 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		BD74800C2A7E502000012200 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
+		BD74800D2A7E50BC00012200 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
+		BD74800E2A7E50C500012200 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Feed.strings; sourceTree = "<group>"; };
 		BD7A56BC2A5C2D3E0087BEAF /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		BD7A56BE2A5C2DE30087BEAF /* UIRefreshControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		BD7A56C02A5C2E510087BEAF /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
@@ -759,6 +761,8 @@
 				en,
 				Base,
 				"pt-BR",
+				el,
+				vi,
 			);
 			mainGroup = BDF9F73929505BCD00859FCB;
 			productRefGroup = BDF9F74429505BCE00859FCB /* Products */;
@@ -985,6 +989,8 @@
 			children = (
 				BD74800A2A7E4FEC00012200 /* en */,
 				BD74800C2A7E502000012200 /* pt-BR */,
+				BD74800D2A7E50BC00012200 /* el */,
+				BD74800E2A7E50C500012200 /* vi */,
 			);
 			name = Feed.strings;
 			sourceTree = "<group>";
