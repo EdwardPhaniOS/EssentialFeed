@@ -48,8 +48,8 @@
 		BD7480002A7E020A00012200 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD747FFF2A7E020A00012200 /* FeedImageDataLoaderPresentationAdapter.swift */; };
 		BD7480022A7E027400012200 /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7480012A7E027400012200 /* FeedLoaderPresentationAdapter.swift */; };
 		BD7480042A7E02B800012200 /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7480032A7E02B800012200 /* FeedViewAdapter.swift */; };
-		BD7480062A7E0ACA00012200 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD7480052A7E0ACA00012200 /* Feed.strings */; };
 		BD7480082A7E0CAB00012200 /* FeedUIIntegrationTests+Localizaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7480072A7E0CAB00012200 /* FeedUIIntegrationTests+Localizaton.swift */; };
+		BD7480092A7E4FEC00012200 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD74800B2A7E4FEC00012200 /* Feed.strings */; };
 		BD7882CD2A75111A008CC7E2 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6235DC2A729C3500B70E7F /* Feed.storyboard */; };
 		BD7882CF2A7513F7008CC7E2 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA01CFB2A47EB9900D1FEB0 /* FeedImageCell.swift */; };
 		BD7882D02A75146B008CC7E2 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9EFDA32A7505A8007D504E /* UITableView+Dequeueing.swift */; };
@@ -185,8 +185,9 @@
 		BD747FFF2A7E020A00012200 /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		BD7480012A7E027400012200 /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		BD7480032A7E02B800012200 /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
-		BD7480052A7E0ACA00012200 /* Feed.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Feed.strings; sourceTree = "<group>"; };
 		BD7480072A7E0CAB00012200 /* FeedUIIntegrationTests+Localizaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+Localizaton.swift"; sourceTree = "<group>"; };
+		BD74800A2A7E4FEC00012200 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
+		BD74800C2A7E502000012200 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
 		BD7A56BC2A5C2D3E0087BEAF /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		BD7A56BE2A5C2DE30087BEAF /* UIRefreshControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		BD7A56C02A5C2E510087BEAF /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
@@ -407,7 +408,7 @@
 			children = (
 				BD6235CC2A680E2E00B70E7F /* FeedImageViewModel.swift */,
 				BD6235CF2A6D18DF00B70E7F /* FeedPresenter.swift */,
-				BD7480052A7E0ACA00012200 /* Feed.strings */,
+				BD74800B2A7E4FEC00012200 /* Feed.strings */,
 				BD6235D12A6D2B7600B70E7F /* FeedImagePresenter.swift */,
 				BD6235D32A6FFA7700B70E7F /* FeedLoadingViewModel.swift */,
 				BD6235D52A6FFA9200B70E7F /* FeedViewModel.swift */,
@@ -757,6 +758,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = BDF9F73929505BCD00859FCB;
 			productRefGroup = BDF9F74429505BCE00859FCB /* Products */;
@@ -817,7 +819,7 @@
 			files = (
 				BD6235DD2A729C3500B70E7F /* Feed.storyboard in Resources */,
 				BD6235DF2A729CA700B70E7F /* Feed.xcassets in Resources */,
-				BD7480062A7E0ACA00012200 /* Feed.strings in Resources */,
+				BD7480092A7E4FEC00012200 /* Feed.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,6 +979,18 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		BD74800B2A7E4FEC00012200 /* Feed.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD74800A2A7E4FEC00012200 /* en */,
+				BD74800C2A7E502000012200 /* pt-BR */,
+			);
+			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		BD0D75A7297FDEE60002352A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1094,6 +1108,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1160,6 +1175,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
