@@ -781,8 +781,8 @@
             filePath = "EssentialFeediOS/Feed UI/Controllers/FeedViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "tableModel"
             landmarkType = "24">
             <Locations>
