@@ -8,6 +8,7 @@
 import XCTest
 import EssentialFeed
 
+@available(macOS 13.0, *)
 class EssentialFeedAPIEndToEndTests: XCTestCase {
    
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
@@ -59,26 +60,21 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
     }
     
     func getFeedImageDataResult(file: StaticString = #file, line: UInt = #line) -> FeedImageDataLoader.Result? {
-        let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed/73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")!
         
-        var url = feedTestServerURL
-        if #available(iOS 16.0, *) {
-            url = url.appending(path: "73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
-        } else {
-            url = url.appendingPathComponent("73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
-        }
+        let url = feedTestServerURL.appendingPathComponent("73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
+        
         let loader = RemoteFeedImageDataLoader(client: ephemeralClient())
         trackForMemoryLeak(loader, file: file, line: line)
         
         let exp = expectation(description: "Wait for load completion")
         
         var receivedResult: FeedImageDataLoader.Result?
-        _ = loader.loadImageData(from: testServerURL, completion: { result in
+        _ = loader.loadImageData(from: url, completion: { result in
             receivedResult = result
             exp.fulfill()
         })
         
-        wait(for: [exp], timeout: 5.0)
+        wait(for: [exp], timeout: 50.0)
         
         return receivedResult
     }

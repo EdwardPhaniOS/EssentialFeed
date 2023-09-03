@@ -53,7 +53,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
             
             expect(sut, toCompleteWith: failure(.invalidData)) {
                 let json = makeItemsJSON(items: [])
-                client.complete(withStatusCode: code, at: index, data: json)
+                client.complete(withStatusCode: code, data: json, at: index)
             }
         }
     }
@@ -167,26 +167,4 @@ final class RemoteFeedLoaderTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    private class HTTPClientSpy: HTTPClient {
-        private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
-        
-        var requestedURLs: [URL] {
-            return messages.map { $0.url }
-        }
-        
-        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
-            messages.append((url, completion))
-        }
-        
-        func complete(with error: Error, at index: Int = 0) -> Void {
-            messages[index].completion(HTTPClient.Result.failure(error))
-        }
-        
-        func complete(withStatusCode code: Int, at index: Int = 0, data: Data) -> Void {
-            let response = HTTPURLResponse(url: requestedURLs[index], statusCode: code, httpVersion: nil, headerFields: nil)!
-            
-            messages[index].completion(.success((data, response)))
-            
-        }
-    }
 }
