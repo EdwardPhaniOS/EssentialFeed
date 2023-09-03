@@ -132,16 +132,13 @@ final class LoadFeedImageDataFromRemoteUseCaseTests: XCTestCase {
         let url = URL(string: "https://a-given-url.com")!
         let exp = expectation(description: "Wait for load completion")
         
-        _ = sut.loadImageData(from: url) { receivedResult in
+        sut.loadImageData(from: url) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedData), .success(expectedData)):
                 XCTAssertEqual(receivedData, expectedData, file: file, line: line)
-               
-            case let (.failure(receivedError as RemoteFeedImageDataLoader.Error), .failure(expectedError as RemoteFeedImageDataLoader.Error)):
-                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
                 
-            case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
-                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+            case let (.failure(receivedError), .failure(expectedError)):
+                XCTAssertEqual(receivedError as NSError, expectedError as NSError, file: file, line: line)
                 
             default:
                 XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
@@ -151,6 +148,7 @@ final class LoadFeedImageDataFromRemoteUseCaseTests: XCTestCase {
         }
         
         action()
+        wait(for: [exp], timeout: 5.0)
     }
    
 }
