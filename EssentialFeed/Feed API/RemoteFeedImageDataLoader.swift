@@ -7,14 +7,15 @@
 
 import Foundation
 
-class RemoteFeedImageDataLoader: FeedImageDataLoader {
+public class RemoteFeedImageDataLoader: FeedImageDataLoader {
     private let client: HTTPClient
     
-    init(client: HTTPClient) {
+    public init(client: HTTPClient) {
         self.client = client
     }
     
     public enum Error: Swift.Error {
+        case connectivity
         case invalidData
     }
     
@@ -42,7 +43,7 @@ class RemoteFeedImageDataLoader: FeedImageDataLoader {
     }
     
     @discardableResult
-    func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
+    public func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
         let task = HTTPClientTaskWrapper(completion)
         task.wrapped = client.get(from: url) { [weak self] result in
             guard self != nil else { return }
@@ -52,9 +53,10 @@ class RemoteFeedImageDataLoader: FeedImageDataLoader {
                 if response.statusCode == 200, !data.isEmpty {
                     completion(.success(data))
                 } else {
-                    completion(.failure(Error.invalidData))
+                    task.complete(with: .failure(Error.invalidData))
                 }
-            case let .failure(error): completion(.failure(error))
+            case .failure:
+                task.complete(with: .failure(Error.connectivity))
             }
         }
         return task
