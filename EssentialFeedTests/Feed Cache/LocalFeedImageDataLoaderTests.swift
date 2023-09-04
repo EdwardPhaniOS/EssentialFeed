@@ -38,8 +38,14 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
         XCTAssertTrue(store.receivedMessages.isEmpty)
     }
     
-    
-    
+    func test_loadImageDataFromURL_requestsStoredDataForURL() {
+        let (sut, store) = makeSUT()
+        let url = anyURL()
+        
+        _ = sut.loadImageData(from: url, completion: { _ in })
+
+        XCTAssertEqual(store.receivedMessages, [.retrieve(dataFor: url)])
+    }
     
     //MARK: - Helpers
 
