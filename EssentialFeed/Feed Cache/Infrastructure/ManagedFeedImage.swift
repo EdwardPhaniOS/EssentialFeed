@@ -7,7 +7,6 @@
 //
 
 import CoreData
-import EssentialFeed
 
 public class ManagedFeedImage: NSManagedObject {
 

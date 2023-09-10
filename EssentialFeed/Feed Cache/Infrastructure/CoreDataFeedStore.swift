@@ -6,7 +6,6 @@
 //
 
 import CoreData
-import EssentialFeed
 
 public final class CoreDataFeedStore: FeedStore {
     private let container: NSPersistentContainer
@@ -17,7 +16,7 @@ public final class CoreDataFeedStore: FeedStore {
         context = container.newBackgroundContext()
     }
     
-    public func retrieve(completion: @escaping RetrieveCompletion) {
+    public func retrieve(completion: @escaping FeedStore.RetrieveCompletion) {
         perform { context in
             completion(Result {
                 try ManagedCache.find(in: context).map({
@@ -27,7 +26,7 @@ public final class CoreDataFeedStore: FeedStore {
         }
     }
     
-    public func insert(_ feed: [EssentialFeed.LocalFeedImage], timestamp: Date, completion: @escaping InsertCompletion) {
+    public func insert(_ feed: [EssentialFeed.LocalFeedImage], timestamp: Date, completion: @escaping FeedStore.InsertCompletion) {
         perform { context in
             completion(Result {
                 let managedCache = try ManagedCache.newUniqueInstance(in: context)
@@ -39,7 +38,7 @@ public final class CoreDataFeedStore: FeedStore {
         }
     }
     
-    public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
+    public func deleteCachedFeed(completion: @escaping FeedStore.DeletionCompletion) {
         perform { context in
             completion(Result {
                 try ManagedCache.find(in: context).map(context.delete).map(context.save)
