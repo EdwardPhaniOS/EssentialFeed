@@ -262,54 +262,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B5BCF220-E7CA-4216-9F87-FF1CC206A314"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeed/Feed Cache/Infrastructure/CoreDataFeedStore.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "init(storeURL:bundle:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B5BCF220-E7CA-4216-9F87-FF1CC206A314 - 15cd2ea21dd35f2f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedCacheIntegrationTests.CoreDataFeedStore.init(storeURL: Foundation.URL, bundle: __C.NSBundle) throws -&gt; EssentialFeedCacheIntegrationTests.CoreDataFeedStore"
-                  moduleName = "EssentialFeedCacheIntegrationTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeed/Feed%20Cache/Infrastructure/CoreDataFeedStore.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "95">
-               </Location>
-               <Location
-                  uuid = "B5BCF220-E7CA-4216-9F87-FF1CC206A314 - 30521c056ef1ad45"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EssentialFeedTests.CoreDataFeedStore.init(storeURL: Foundation.URL, bundle: __C.NSBundle) throws -&gt; EssentialFeedTests.CoreDataFeedStore"
-                  moduleName = "EssentialFeedTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeed/Feed%20Cache/Infrastructure/CoreDataFeedStore.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "95">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "5E201D75-8700-4B84-9AED-0A3C751D6CF6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -961,6 +913,102 @@
             endingLineNumber = "32"
             landmarkName = "complete(with:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7ED150D6-26E4-4A44-A720-8C7AB87EC45D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialFeedTests/Feed Cache/CoreDataFeedImageDataStoreTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "insert(_:for:into:file:line:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7ED150D6-26E4-4A44-A720-8C7AB87EC45D - 2d979b1cb2697349"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeedTests.CoreDataFeedImageDataStoreTests.insert(_: Foundation.Data, for: Foundation.URL, into: EssentialFeed.CoreDataFeedStore, file: Swift.StaticString, line: Swift.UInt) -&gt; ()"
+                  moduleName = "EssentialFeedTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeedTests/Feed%20Cache/CoreDataFeedImageDataStoreTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "623">
+               </Location>
+               <Location
+                  uuid = "7ED150D6-26E4-4A44-A720-8C7AB87EC45D - ee799c7adb3000da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in EssentialFeedTests.CoreDataFeedImageDataStoreTests.insert(_: Foundation.Data, for: Foundation.URL, into: EssentialFeed.CoreDataFeedStore, file: Swift.StaticString, line: Swift.UInt) -&gt; ()"
+                  moduleName = "EssentialFeedTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeedTests/Feed%20Cache/CoreDataFeedImageDataStoreTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "490">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA226099-B75A-424F-9467-EA636666D6A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialFeedTests/Feed Cache/CoreDataFeedImageDataStoreTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "insert(_:for:into:file:line:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DA226099-B75A-424F-9467-EA636666D6A5 - ee799c7adb30005e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in EssentialFeedTests.CoreDataFeedImageDataStoreTests.insert(_: Foundation.Data, for: Foundation.URL, into: EssentialFeed.CoreDataFeedStore, file: Swift.StaticString, line: Swift.UInt) -&gt; ()"
+                  moduleName = "EssentialFeedTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeedTests/Feed%20Cache/CoreDataFeedImageDataStoreTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "1042">
+               </Location>
+               <Location
+                  uuid = "DA226099-B75A-424F-9467-EA636666D6A5 - bdc42b0be54cd00d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in EssentialFeedTests.CoreDataFeedImageDataStoreTests.insert(_: Foundation.Data, for: Foundation.URL, into: EssentialFeed.CoreDataFeedStore, file: Swift.StaticString, line: Swift.UInt) -&gt; ()"
+                  moduleName = "EssentialFeedTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeedTests/Feed%20Cache/CoreDataFeedImageDataStoreTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "277">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
