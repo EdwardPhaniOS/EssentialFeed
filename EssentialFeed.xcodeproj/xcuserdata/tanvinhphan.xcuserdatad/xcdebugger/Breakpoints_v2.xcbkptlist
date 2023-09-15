@@ -349,8 +349,8 @@
             filePath = "EssentialFeedCacheIntegrationTests/EssentialFeedCacheIntegrationTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "expect(_:toLoad:file:line:)"
             landmarkType = "7">
          </BreakpointContent>
