@@ -105,7 +105,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         
         expect(sut, toCompleteWith: .failure(deletionError)) {
             store.completeRetrieval(with: feed.local, timestamp: expiredTimestamp)
-            store.completeRetrieval(with: deletionError)
+            store.completeDeletion(with: deletionError)
         }
     }
     
