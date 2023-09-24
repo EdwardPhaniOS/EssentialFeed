@@ -50,7 +50,7 @@ final class RemoteWithLocalFallbackFeedLoaderTests: XCTestCase {
         sut.load { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedFeed), .success(expectedFeed)):
-                XCTAssertEqual(receivedFeed, expectedResult, file: file, line: line)
+                XCTAssertEqual(receivedFeed, expectedFeed, file: file, line: line)
                 
             case (.failure, .failure):
                 break
