@@ -25,6 +25,7 @@
 		BDD2A14A2AC71B0A004660B8 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2A1492AC71B0A004660B8 /* SharedTestHelpers.swift */; };
 		BDF8470A2AC838DF0096140A /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF847092AC838DF0096140A /* FeedLoaderCacheDecorator.swift */; };
 		BDF8470C2AC841860096140A /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8470B2AC841860096140A /* FeedLoaderStub.swift */; };
+		BDF8470E2AC842990096140A /* FeedLoaderTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8470D2AC842990096140A /* FeedLoaderTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		BDD2A1492AC71B0A004660B8 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		BDF847092AC838DF0096140A /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 		BDF8470B2AC841860096140A /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
+		BDF8470D2AC842990096140A /* FeedLoaderTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				BDD2A1462AC71A81004660B8 /* XCTestCase+MemoryLeakTracking.swift */,
 				BDD2A1492AC71B0A004660B8 /* SharedTestHelpers.swift */,
 				BDF8470B2AC841860096140A /* FeedLoaderStub.swift */,
+				BDF8470D2AC842990096140A /* FeedLoaderTestCase.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				BDD2A14A2AC71B0A004660B8 /* SharedTestHelpers.swift in Sources */,
 				BD0A886B2AC0149600DB1844 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				BD0A88662AC0025E00DB1844 /* RemoteWithLocalFallbackFeedLoaderTests.swift in Sources */,
+				BDF8470E2AC842990096140A /* FeedLoaderTestCase.swift in Sources */,
 				BDF8470A2AC838DF0096140A /* FeedLoaderCacheDecorator.swift in Sources */,
 				BDF8470C2AC841860096140A /* FeedLoaderStub.swift in Sources */,
 				BDD2A1472AC71A81004660B8 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
