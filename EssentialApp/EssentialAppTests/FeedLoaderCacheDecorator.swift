@@ -20,7 +20,7 @@ class FeedLoaderCacheDecorator: FeedLoader {
     }
 }
 
-final class FeedLoaderCacheDecoratorTests: FeedLoaderTestCase {
+final class FeedLoaderCacheDecoratorTests: XCTestCase, FeedLoaderTestCase {
 
     func test_load_deliversFeedOnLoaderSuccess() {
         let feed = uniqueFeed()
