@@ -74,7 +74,7 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     //
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
         var storeURL: URL!
-        if #available(macOS 13.0, *) {
+        if #available(iOS 16.0, *) {
             storeURL = URL(filePath: "/dev/null")
         } else {
             storeURL = URL(fileURLWithPath: "/dev/null")
