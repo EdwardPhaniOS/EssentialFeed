@@ -73,7 +73,7 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
         _ = sut.loadImageData(from: url, completion: { _ in })
         loader.complete(with: anyNSError())
         
-        XCTAssertEqual(cache.messages.isEmpty, "Expected not to cache image data on load error")
+        XCTAssertTrue(cache.messages.isEmpty, "Expected not to cache image data on load error")
     }
     
     //MARK: - Helpers
