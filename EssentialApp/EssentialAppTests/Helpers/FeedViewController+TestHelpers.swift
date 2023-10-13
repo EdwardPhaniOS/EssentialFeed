@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import EssentialFeediOS
+@testable import EssentialFeediOS
 
 extension FeedViewController {
     func simulateUserInitiatedFeedReload() {
@@ -25,6 +25,14 @@ extension FeedViewController {
         let ds = tableView.prefetchDataSource
         let index = IndexPath(row: row, section: feedImagesSection)
         ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
+    }
+    
+    func renderedFeedImageData(at index: Int) -> Data? {
+        return simulateFeedImageViewVisible(at: index)?.renderedImage
+    }
+    
+    var errorMessage: String? {
+        return errorView?.message
     }
     
     @discardableResult
