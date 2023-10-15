@@ -404,6 +404,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		BD3C94352ADBC12100586DEB /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = snapshots;
+			sourceTree = "<group>";
+		};
 		BD44AF31299FCBFB00013402 /* Feed Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +507,7 @@
 			children = (
 				BD7480112A7E51C000012200 /* Feed Presentation */,
 				BD3C942D2ADB9CDF00586DEB /* FeedSnapshotTests.swift */,
+				BD3C94352ADBC12100586DEB /* snapshots */,
 				BD3C94312ADBA42B00586DEB /* Helpers */,
 			);
 			path = EssentialFeediOSTests;
