@@ -7,6 +7,7 @@
 
 import XCTest
 import EssentialFeed
+import EssentialFeedAPI
 
 @available(macOS 13.0, *)
 class EssentialFeedAPIEndToEndTests: XCTestCase {

@@ -106,8 +106,8 @@
 		BDF9F74829505BCE00859FCB /* EssentialFeed.docc in Sources */ = {isa = PBXBuildFile; fileRef = BDF9F74729505BCE00859FCB /* EssentialFeed.docc */; };
 		BDF9F74929505BCE00859FCB /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF9F74629505BCE00859FCB /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDF9F75229505C4200859FCB /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF9F75129505C4100859FCB /* FeedLoader.swift */; };
-		BDF9F75B29505F1A00859FCB /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF9F75A29505F1A00859FCB /* EssentialFeedTests.swift */; };
 		BDF9F75C29505F1A00859FCB /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF9F74329505BCE00859FCB /* EssentialFeed.framework */; };
+		BDFD4F1C2AF779E500540973 /* EssentialFeedAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC4279F2AECDF0A001DAA9C /* EssentialFeedAPI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,7 +266,6 @@
 		BDF9F74729505BCE00859FCB /* EssentialFeed.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentialFeed.docc; sourceTree = "<group>"; };
 		BDF9F75129505C4100859FCB /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		BDF9F75829505F1A00859FCB /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDF9F75A29505F1A00859FCB /* EssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedTests.swift; sourceTree = "<group>"; };
 		BDF9F76229506A5D00859FCB /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 		BDFFA0F32A3E159D00C12FA0 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -276,6 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDFD4F1C2AF779E500540973 /* EssentialFeedAPI.framework in Frameworks */,
 				BD0D75A3297FDEE60002352A /* EssentialFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,7 +675,6 @@
 				BD44AF34299FD72500013402 /* Helpers */,
 				BD44AF31299FCBFB00013402 /* Feed Cache */,
 				BD0D75A0297FDEE60002352A /* EssentialFeedAPIEndToEndTests */,
-				BDF9F75A29505F1A00859FCB /* EssentialFeedTests.swift */,
 				BD01AC822A8A5D520082948B /* Feed Presentation */,
 			);
 			path = EssentialFeedTests;
@@ -1109,7 +1108,6 @@
 				BDE0F5E92AAC411400B76997 /* CoreDataFeedImageDataStoreTests.swift in Sources */,
 				BD44AF33299FCC3200013402 /* CacheFeedUseCaseTests.swift in Sources */,
 				BDCB394229FE1837006BE8A7 /* FeedStoreSpecs.swift in Sources */,
-				BDF9F75B29505F1A00859FCB /* EssentialFeedTests.swift in Sources */,
 				BDABB6912A0767FF0055C78B /* FeedStore.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1324,6 +1322,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vinhphan.EssentialFeedAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macos macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1353,6 +1354,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vinhphan.EssentialFeedAPI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macos macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1371,6 +1375,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vinhphan.EssentialFeedAPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macos macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1389,6 +1396,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vinhphan.EssentialFeedAPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macos macosx";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
