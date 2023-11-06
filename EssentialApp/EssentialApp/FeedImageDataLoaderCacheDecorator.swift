@@ -29,8 +29,4 @@ public class FeedImageDataLoaderCacheDecorator: FeedImageDataLoader {
     
 }
 
-extension FeedImageDataCache {
-    func saveIgnoringResult(_ data: Data, for url: URL) {
-        save(data, for: url, completion: { _ in })
-    }
-}
+
