@@ -8,7 +8,7 @@
 import Foundation
 import EssentialFeed
 
-final class RemoteFeedImageCommentsLoader: FeedLoader {
+public final class RemoteFeedImageCommentsLoader: FeedLoader {
     private let url: URL
     private let client: HTTPClient
     
@@ -24,7 +24,7 @@ final class RemoteFeedImageCommentsLoader: FeedLoader {
         self.client = client
     }
     
-    func load(completion: @escaping (Result) -> Void) {
+    public func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { [weak self] result in
             guard self != nil else { return }
             
@@ -32,8 +32,8 @@ final class RemoteFeedImageCommentsLoader: FeedLoader {
             case let .success((data, response)):
                 completion(RemoteFeedImageCommentsLoader.map(data, from: response))
                 break
-            case let .failure(error):
-                completion(.failure(error))
+            case .failure:
+                completion(.failure(Error.connectivity))
             }
         }
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ImageCommentMapper {
+public final class ImageCommentMapper {
     
     private struct Root: Decodable {
         let items: [RemoteFeedItem]

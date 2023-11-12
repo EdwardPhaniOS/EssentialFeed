@@ -17,129 +17,127 @@ final class LoadImageCommentsFromRemoteUseCaseTests: XCTestCase {
         XCTAssertTrue(client.requestedURLs.isEmpty)
     }
     
-    func test_loadImageDataFromURL_requestsDataFromURL() {
+    func test_load_requestsDataFromURL() {
         let url = URL(string: "https://a-given-url.com")!
         let (sut, client) = makeSUT(url: url)
         
-        _ = sut.loadImageData(from: url) { _ in }
+        sut.load() { _ in }
         
         XCTAssertEqual(client.requestedURLs, [url])
     }
     
-    func test_loadImageDataFromURLTwice_requestsDataFromURLTwice() {
+    func test_loadTwice_requestsDataFromURLTwice() {
         let url = URL(string: "https://a-given-url.com")!
         let (sut, client) = makeSUT(url: url)
         
-        _ = sut.loadImageData(from: url) { _ in }
-        _ = sut.loadImageData(from: url) { _ in }
+        sut.load() { _ in }
+        sut.load() { _ in }
         
         XCTAssertEqual(client.requestedURLs, [url, url])
     }
     
-    func test_loadImageDataFromURL_deliversConnectivityErrorOnClientError() {
+    func test_load_deliversConnectivityErrorOnClientError() {
         let (sut, client) = makeSUT()
         let clientError = NSError(domain: "a client error", code: 0)
         
-        expect(sut, toCompleteWith: .failure(RemoteFeedImageDataLoader.Error.connectivity)) {
+        expect(sut, toCompleteWith: .failure(RemoteFeedImageCommentsLoader.Error.connectivity)) {
             client.complete(with: clientError)
         }
     }
     
-    func test_loadImageDataFromURL_deliversInvalidDataErrorOnNon200HTTPResponse() {
+    func test_load_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
         
         let samples = [199, 201, 300, 400, 500]
 
         samples.enumerated().forEach { index, code in
             expect(sut, toCompleteWith: failure(.invalidData)) {
-                client.complete(withStatusCode: code, data: anyData(), at: index)
+                let json = makeItemsJSON([])
+                client.complete(withStatusCode: code, data: json, at: index)
             }
         }
     }
     
-    private func test_loadImageDataFromURL_deliversInvalidDataErrorOn200HTTPResponseWithEmptyData() {
+    private func test_load_deliversErrorOn200HTTPResponseWithInvalidData() {
         let (sut, client) = makeSUT()
         
         expect(sut, toCompleteWith: failure(.invalidData)) {
-            let emptyData = Data()
-            client.complete(withStatusCode: 200, data: emptyData)
+            let invalidJson = Data("invalid json".utf8)
+            client.complete(withStatusCode: 200, data: invalidJson)
         }
     }
     
-    private func test_loadImageDataFromURL_deliversReceivedNonEmptyDataOn200HTTPResponse() {
+    private func test_load_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() {
         let (sut, client) = makeSUT()
-        let nonEmptyData = Data("non-empty data".utf8)
         
-        expect(sut, toCompleteWith: .success(nonEmptyData)) {
-            client.complete(withStatusCode: 200, data: nonEmptyData)
+        expect(sut, toCompleteWith: .success([])) {
+            let emptyListJSON = makeItemsJSON([])
+            client.complete(withStatusCode: 200, data: emptyListJSON)
         }
     }
     
-    private func test_cancelLoadImageDataURLTask_cancelsClientURLRequest() {
+    private func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
         let (sut, client) = makeSUT()
-        let url = URL(string: "https://a-given-url.com")!
         
-        let task = sut.loadImageData(from: url) { _ in
-            XCTAssertTrue(client.cancelledURLs.isEmpty, "Expected no cancelled URL request until task is cancelled")
+        let item1 = makeItem(
+            id: UUID(),
+            imageURL: URL(string: "http://a-url.com")!)
+        
+        let item2 = makeItem(
+            id: UUID(),
+            description: "a description",
+            location: "a location",
+            imageURL: URL(string: "http://another-url.com")!)
+        
+        let items = [item1.model, item2.model]
+        expect(sut, toCompleteWith: .success(items)) {
+            let json = makeItemsJSON([item1.json, item2.json])
+            client.complete(withStatusCode: 200, data: json)
         }
-        
-        task.cancel()
-        XCTAssertEqual(client.cancelledURLs, [url], "Expected cancelled URL request after task is cancelled")
-    }
-    
-    func test_loadImageDataFromURL_doesNotDeliverResultAfterCancellingTask() {
-        let (sut, client) = makeSUT()
-        let nonEmptyData = Data("non-empty data".utf8)
-        
-        var received = [FeedImageDataLoader.Result]()
-        let task = sut.loadImageData(from: anyURL()) { received.append($0) }
-        task.cancel()
-        
-        client.complete(withStatusCode: 404, data: anyData())
-        client.complete(withStatusCode: 200, data: nonEmptyData)
-        client.complete(with: anyNSError())
-        
-        XCTAssertTrue(received.isEmpty, "Expected no received results after cancelling task")
-    }
-    
-    private func test_loadImageDataFromURL_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
-        let client = HTTPClientSpy()
-        var sut: RemoteFeedImageDataLoader? = RemoteFeedImageDataLoader(client: client)
-        
-        var capturedResult = [FeedImageDataLoader.Result]()
-        sut?.loadImageData(from: anyURL(), completion: { capturedResult.append($0) })
-        
-        sut = nil
-        client.complete(withStatusCode: 200, data: anyData())
-        
-        XCTAssertTrue(capturedResult.isEmpty)
     }
     
     //MARK: - Helpers
 
-    private func makeSUT(url: URL = anyURL(), file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, client: HTTPClientSpy) {
-        let client = HTTPClientSpy()
-        let sut = RemoteFeedImageDataLoader(client: client)
-        trackForMemoryLeak(client, file: file, line: line)
+    private func makeSUT(url: URL = anyURL(), file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageCommentsLoader, client: HTTPClientSpy) {
+        let client: HTTPClientSpy = HTTPClientSpy()
+        let sut = RemoteFeedImageCommentsLoader(url: url, client: client)
         trackForMemoryLeak(sut, file: file, line: line)
+        trackForMemoryLeak(client, file: file, line: line)
         return (sut, client)
     }
     
-    private func failure(_ error: RemoteFeedImageDataLoader.Error) -> FeedImageDataLoader.Result {
+    private func failure(_ error: RemoteFeedImageCommentsLoader.Error) -> RemoteFeedImageCommentsLoader.Result {
         return .failure(error)
     }
     
-    private func expect(_ sut: RemoteFeedImageDataLoader, toCompleteWith expectedResult: FeedImageDataLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
-        let url = URL(string: "https://a-given-url.com")!
+    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedImage, json: [String : Any]) {
+        let item = FeedImage(id: id, description: description, location: location, url: imageURL)
+        
+        let json = [
+            "id": id.uuid,
+            "description": description,
+            "location": location,
+            "image": imageURL.absoluteString
+        ].compactMapValues { $0 }
+        
+        return (item, json)
+    }
+    
+    private func makeItemsJSON(_ items: [[String : Any]]) -> Data {
+        let json = ["items": items]
+        return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    private func expect(_ sut: RemoteFeedImageCommentsLoader, toCompleteWith expectedResult: RemoteFeedImageCommentsLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
         
-        sut.loadImageData(from: url) { receivedResult in
+        sut.load { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedData), .success(expectedData)):
                 XCTAssertEqual(receivedData, expectedData, file: file, line: line)
                 
-            case let (.failure(receivedError), .failure(expectedError)):
-                XCTAssertEqual(receivedError as NSError, expectedError as NSError, file: file, line: line)
+            case let (.failure(receivedError as RemoteFeedImageCommentsLoader.Error), .failure(expectedError as RemoteFeedImageCommentsLoader.Error)):
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
                 
             default:
                 XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
