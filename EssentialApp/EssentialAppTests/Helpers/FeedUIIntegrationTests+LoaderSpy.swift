@@ -20,10 +20,6 @@ extension FeedUIIntegrationTests {
             return feedRequests.count
         }
         
-        func load(completion: @escaping (FeedLoader.Result) -> Void) {
-            feedRequests.append(completion)
-        }
-        
         func loadPublisher() -> AnyPublisher<[FeedImage], Error> {
             let publisher = PassthroughSubject<[FeedImage], Error>()
             feedRequests.append(publisher)
