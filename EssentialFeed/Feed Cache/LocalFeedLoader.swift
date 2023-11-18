@@ -18,8 +18,8 @@ public final class LocalFeedLoader {
     }
 }
 
-extension LocalFeedLoader: FeedCache {
-    public typealias SaveResult = FeedCache.Result
+extension LocalFeedLoader {
+    public typealias SaveResult = Swift.Result<[FeedImage], Error>
     
     public func save(_ items: [FeedImage], completion: @escaping ((SaveResult) -> Void)) {
         store.deleteCachedFeed { [weak self] deletionResult in
@@ -40,7 +40,7 @@ extension LocalFeedLoader: FeedCache {
             
             switch insertionResult {
             case .success:
-                completion(.success(Void()))
+                completion(.success([]))
             case let .failure(error):
                 completion(.failure(error))
             }
