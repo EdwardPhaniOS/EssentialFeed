@@ -17,11 +17,11 @@ public final class FeedItemsMapper {
             let id: UUID
             let description: String?
             let location: String?
-            let imageURL: URL
+            let image: URL
         }
         
         var images: [FeedImage] {
-            return items.map { FeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.imageURL) }
+            return items.map { FeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.image) }
         }
     }
     

@@ -20,7 +20,6 @@ public extension HTTPClient {
             Future({ completion in
                 task = self.get(from: url, completion: completion)
             })
-            
         }
         .handleEvents(receiveCancel: { task?.cancel() })
         .eraseToAnyPublisher()

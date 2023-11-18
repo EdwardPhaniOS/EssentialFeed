@@ -57,7 +57,7 @@ class FeedItemsMapperTests: XCTestCase {
             "id": id.uuidString,
             "description": description,
             "location": location,
-            "imageURL": imageURL.absoluteString
+            "image": imageURL.absoluteString
         ].compactMapValues{ $0 }
         
         return (item, json)
