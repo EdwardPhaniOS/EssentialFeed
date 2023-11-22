@@ -7,4 +7,4 @@
 */
 
 "FEED_VIEW_TITLE" = "Nguồn cấp dữ liệu";
-"FEED_VIEW_CONNECTION_ERROR" = "Lỗi kết nối";
+"GENERIC_CONNECTION_ERROR" = "Lỗi kết nối";
