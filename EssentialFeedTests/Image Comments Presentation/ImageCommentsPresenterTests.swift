@@ -37,8 +37,8 @@ final class ImageCommentsPresenterTests: XCTestCase {
             locale: locale)
         
         XCTAssertEqual(viewModel.comments, [
-            ImageCommentViewModel(message: "a message", date: "5 minutes ago", userName: "a username"),
-            ImageCommentViewModel(message: "another message", date: "1 day ago", userName: "another username")
+            ImageCommentViewModel(message: "a message", date: "5 minutes ago", username: "a username"),
+            ImageCommentViewModel(message: "another message", date: "1 day ago", username: "another username")
         ])
     }
     

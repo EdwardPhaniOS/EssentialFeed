@@ -20,7 +20,6 @@ final class ListSnapShotTests: XCTestCase {
         assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "EMPTY_LIST_dark")
     }
     
-    
     func test_listWithErrorMessage() {
         let sut = makeSUT()
         
