@@ -36,15 +36,58 @@ public class ImageCommentsPresenter {
                            currentDate: Date = Date(),
                            calendar: Calendar = .current,
                            locale: Locale = .current) -> ImageCommentsViewModel {
-        let formatter = RelativeDateTimeFormatter()
-        formatter.calendar = calendar
-        formatter.locale = locale
         
         return ImageCommentsViewModel(comments: comments.map({ comment in
-            ImageCommentViewModel(
+            
+            let date = getRelativeDateString(createdAt: comment.createdAt,
+                                             currentDate: currentDate,
+                                             calendar: calendar,
+                                             locale: locale)
+            
+            return ImageCommentViewModel(
                 message: comment.message,
-                date: formatter.localizedString(for: comment.createdAt, relativeTo: currentDate),
+                date: date,
                 userName: comment.username)
         }))
+    }
+    
+    private static func getRelativeDateString(createdAt: Date,
+                                              currentDate: Date = Date(),
+                                              calendar: Calendar = .current,
+                                              locale: Locale = .current) -> String {
+        
+        if #available(iOS 13.0, *) {
+            let formatter = RelativeDateTimeFormatter()
+            formatter.calendar = calendar
+            formatter.locale = locale
+            return formatter.localizedString(for: createdAt, relativeTo: currentDate)
+        } else {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            formatter.calendar = calendar
+            formatter.locale = locale
+            return formatter.string(from: createdAt)
+        }
+        
+        
+    }
+    
+    
+    private static func getRelativeDateTimeFormatter(calendar: Calendar = .current,
+                                                     locale: Locale = .current) -> Formatter {
+        if #available(iOS 13.0, *) {
+            let formatter = RelativeDateTimeFormatter()
+            formatter.calendar = calendar
+            formatter.locale = locale
+            return formatter
+        } else {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            formatter.calendar = calendar
+            formatter.locale = locale
+            return formatter
+        }
     }
 }

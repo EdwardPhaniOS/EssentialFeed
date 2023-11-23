@@ -68,5 +68,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "701250B0-E6DF-4752-AA41-4DAB037BEF55"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../EssentialFeediOS/Feed UI/Controllers/FeedImageCellController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "display(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "701250B0-E6DF-4752-AA41-4DAB037BEF55 - 216a19ace9421c9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeediOS.FeedImageCellController.display(EssentialFeed.ResourceErrorViewModel) -&gt; ()"
+                  moduleName = "EssentialFeediOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Feed%20UI/Controllers/FeedImageCellController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "701250B0-E6DF-4752-AA41-4DAB037BEF55 - 216a19ace9421c9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeediOS.FeedImageCellController.display(EssentialFeed.ResourceErrorViewModel) -&gt; ()"
+                  moduleName = "EssentialFeediOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Feed%20UI/Controllers/FeedImageCellController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

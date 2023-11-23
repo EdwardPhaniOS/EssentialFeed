@@ -98,6 +98,9 @@
                                                             <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="refresh_ic" title=" "/>
+                                                            <connections>
+                                                                <action selector="retryButtonTapped" destination="iht-Au-Xg9" eventType="touchUpInside" id="ssd-Qu-MoL"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
@@ -144,6 +147,7 @@
                                 <connections>
                                     <outlet property="descriptionLabel" destination="byI-Rc-PiM" id="so5-Lv-9Sa"/>
                                     <outlet property="feedImageContainer" destination="UTq-Hl-wV2" id="8KI-o0-bOC"/>
+                                    <outlet property="feedImageRetryButton" destination="1X7-Jy-Mux" id="a2G-CO-aGX"/>
                                     <outlet property="feedImageView" destination="rW9-0y-xmk" id="dtb-Ba-9tC"/>
                                     <outlet property="locationContainer" destination="yXx-Ju-uHC" id="qvQ-6l-0o3"/>
                                     <outlet property="locationLabel" destination="T5c-zb-ln0" id="jiq-Ky-NsZ"/>

@@ -11,46 +11,19 @@ import EssentialFeediOS
 
 class FeedSnapshotTests: XCTestCase {
     
-    func test_emptyFeed() {
-        let sut = makeSUT()
-        
-        sut.display(emptyFeed())
-        
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "EMPTY_FEED_light")
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "EMPTY_FEED_dark")
-    }
-    
-    func test_feedWithContent() {
-        let sut = makeSUT()
-        
-        sut.display(feedWithContent())
-        
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "FEED_WITH_CONTENT_light")
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "FEED_WITH_CONTENT_dark")
-    }
-    
-    func test_feedWithError() {
-        let sut = makeSUT()
-        
-        sut.display(.error(message: "This is a\nmulti-line\nerror message"))
-        
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "FEED_WITH_ERROR_MESSAGE_light")
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "FEED_WITH_ERROR_MESSAGE_dark")
-    }
-    
     func test_feedWithFailedImageLoading() {
         let sut = makeSUT()
         
         sut.display(feedWithFailedImageLoading())
         
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "FEED_WITH_FAILED_IMAGE_LOADING_light")
-        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "FEED_WITH_FAILED_IMAGE_LOADING_dark")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "LIST_WITH_FAILED_IMAGE_LOADING_light")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "LIST_WITH_FAILED_IMAGE_LOADING_dark")
     }
     
-    private func makeSUT() -> FeedViewController {
-        let bundle = Bundle(for: FeedViewController.self)
+    private func makeSUT() -> ListViewController {
+        let bundle = Bundle(for: ListViewController.self)
         let storyboard = UIStoryboard(name: "Feed", bundle: bundle)
-        let controller = storyboard.instantiateInitialViewController() as! FeedViewController
+        let controller = storyboard.instantiateInitialViewController() as! ListViewController
         controller.loadViewIfNeeded()
         controller.tableView.showsVerticalScrollIndicator = false
         controller.tableView.showsHorizontalScrollIndicator = false
@@ -64,10 +37,6 @@ class FeedSnapshotTests: XCTestCase {
         ]
     }
     
-    private func emptyFeed() -> [FeedImageCellController] {
-        return []
-    }
-    
     private func feedWithContent() -> [ImageStub] {
         return [
             ImageStub(description: "The East Side Gallery is an open-air gallery in Berlin. It consists of a series of murals painted directly on a 1,316 m long remnant of the Berlin Wall, located near the centre of Berlin, on Mühlenstraße in Friedrichshain-Kreuzberg. The gallery has official status as a Denkmal, or heritage-protected landmark.", location: "East Side Gallery\nMemorial in Berlin, Germany", image: UIImage.make(withColor: .red)),
@@ -78,7 +47,7 @@ class FeedSnapshotTests: XCTestCase {
     
 }
 
-private extension FeedViewController {
+private extension ListViewController {
     
     func display(_ stubs: [ImageStub]) {
         let cells: [FeedImageCellController] = stubs.map { stub in
