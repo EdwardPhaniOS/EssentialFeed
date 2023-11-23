@@ -11,14 +11,14 @@ import EssentialFeed
 final class ImageCommentsPresenterTests: XCTestCase {
 
     func test_title_isLocalized() {
-        XCTAssertEqual(ImageCommentPresenter.title, localized("IMAGE_COMMENTS_VIEW_TITLE"))
+        XCTAssertEqual(ImageCommentsPresenter.title, localized("IMAGE_COMMENTS_VIEW_TITLE"))
     }
     
     //MARK: - Helpers
     
     private func localized(_ key: String, file: StaticString = #file, line: UInt = #line) -> String {
         let table: String = "ImageComments"
-        let bundle = Bundle(for: ImageCommentPresenter.self)
+        let bundle = Bundle(for: ImageCommentsPresenter.self)
         let value = bundle.localizedString(forKey: key, value: nil, table: table)
         
         if value == key {

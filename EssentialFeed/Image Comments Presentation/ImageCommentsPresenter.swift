@@ -7,12 +7,12 @@
 
 import Foundation
 
-public class ImageCommentPresenter {
+public class ImageCommentsPresenter {
     
     public static var title: String {
         NSLocalizedString("IMAGE_COMMENTS_VIEW_TITLE",
                           tableName: "ImageComments",
-                          bundle: Bundle(for: ImageCommentPresenter.self),
+                          bundle: Bundle(for: ImageCommentsPresenter.self),
                           comment: "Title for the image comments view")
     }
 }
