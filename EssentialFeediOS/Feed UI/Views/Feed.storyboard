@@ -93,7 +93,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="353"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="feed-image-view"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X7-Jy-Mux">
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X7-Jy-Mux">
                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="353"/>
                                                             <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                             <state key="normal" title="Button"/>

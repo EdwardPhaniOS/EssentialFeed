@@ -15,7 +15,7 @@ extension FeedUIIntegrationTests {
     class LoaderSpy: FeedImageDataLoader {
         
         private(set) var feedRequests = [PassthroughSubject<[FeedImage], Error>]()
-       
+        
         var loadFeedCallCount: Int {
             return feedRequests.count
         }

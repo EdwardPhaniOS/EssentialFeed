@@ -25,11 +25,12 @@ final class LoadResourcePresentationAdapter<Resource, View: ResourceView> {
         cancellable = loader()
             .dispatchOnMainQueue()
             .sink(receiveCompletion: { [weak self] completion in
+                guard let self = self else { return }
                 switch completion {
                 case .finished: break
                     
                 case let .failure(error):
-                    self?.presenter?.didFinishLoading(with: error)
+                    self.presenter?.didFinishLoading(with: error)
                 }
             }, receiveValue: { [weak self] resource in
                 self?.presenter?.didFinishLoading(with: resource)

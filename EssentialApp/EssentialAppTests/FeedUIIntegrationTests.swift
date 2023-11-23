@@ -62,6 +62,9 @@ final class FeedUIIntegrationTests: XCTestCase {
         
         sut.simulateFeedImageViewVisible(at: 1)
         XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url], "Expected second image URL request once second view also becomes visible")
+        
+        sut.simulateFeedImageViewNotVisible(at: 0)
+        sut.simulateFeedImageViewNotVisible(at: 1)
     }
     
     func test_feedImageView_cancelsImageLoadingWhenNotVisiableAnymore() {
