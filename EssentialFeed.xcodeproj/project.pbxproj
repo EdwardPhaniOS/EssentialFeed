@@ -565,8 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				BD7480112A7E51C000012200 /* Feed Presentation */,
-				BD3C942D2ADB9CDF00586DEB /* FeedSnapshotTests.swift */,
-				BD3C94352ADBC12100586DEB /* snapshots */,
+				BDEF2AA12B0F640F00B9E933 /* Feed UI */,
 				BD3C94312ADBA42B00586DEB /* Helpers */,
 			);
 			path = EssentialFeediOSTests;
@@ -683,6 +682,15 @@
 				BDEF2A9D2B0F520400B9E933 /* ImageComments.strings */,
 			);
 			path = "Image Comments Presentation";
+			sourceTree = "<group>";
+		};
+		BDEF2AA12B0F640F00B9E933 /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				BD3C942D2ADB9CDF00586DEB /* FeedSnapshotTests.swift */,
+				BD3C94352ADBC12100586DEB /* snapshots */,
+			);
+			path = "Feed UI";
 			sourceTree = "<group>";
 		};
 		BDF7B8572B00B56B007CC8D0 /* Image Comments Feature */ = {
