@@ -18,7 +18,7 @@
 		BD0495CD2AD44BFB00D8959F /* LoadResourcePresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0495C92AD44BFB00D8959F /* LoadResourcePresentationAdapter.swift */; };
 		BD0495CF2AD44BFB00D8959F /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0495C42AD44BF800D8959F /* FeedViewAdapter.swift */; };
 		BD0495D92AD44C4700D8959F /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0495D22AD44C4500D8959F /* UIButton+TestHelpers.swift */; };
-		BD0495DA2AD44C4700D8959F /* FeedViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0495D62AD44C4600D8959F /* FeedViewController+TestHelpers.swift */; };
+		BD0495DA2AD44C4700D8959F /* ListViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0495D62AD44C4600D8959F /* ListViewController+TestHelpers.swift */; };
 		BD0495DB2AD44C4700D8959F /* FeedImageCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0495D52AD44C4600D8959F /* FeedImageCell+TestHelpers.swift */; };
 		BD0495DC2AD44C4700D8959F /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0495D02AD44C4400D8959F /* UIImage+TestHelpers.swift */; };
 		BD0495DD2AD44C4700D8959F /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0495D42AD44C4600D8959F /* UIRefreshControl+TestHelpers.swift */; };
@@ -101,7 +101,7 @@
 		BD0495D32AD44C4500D8959F /* UIControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		BD0495D42AD44C4600D8959F /* UIRefreshControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		BD0495D52AD44C4600D8959F /* FeedImageCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageCell+TestHelpers.swift"; sourceTree = "<group>"; };
-		BD0495D62AD44C4600D8959F /* FeedViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+TestHelpers.swift"; sourceTree = "<group>"; };
+		BD0495D62AD44C4600D8959F /* ListViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListViewController+TestHelpers.swift"; sourceTree = "<group>"; };
 		BD0495D72AD44C4700D8959F /* FeedUIIntegrationTests+Localizaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+Localizaton.swift"; sourceTree = "<group>"; };
 		BD0495D82AD44C4700D8959F /* FeedUIIntegrationTests+LoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+LoaderSpy.swift"; sourceTree = "<group>"; };
 		BD0495E22AD44CA300D8959F /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 				BD0495D42AD44C4600D8959F /* UIRefreshControl+TestHelpers.swift */,
 				BD0495D22AD44C4500D8959F /* UIButton+TestHelpers.swift */,
 				BD0495D32AD44C4500D8959F /* UIControl+TestHelpers.swift */,
-				BD0495D62AD44C4600D8959F /* FeedViewController+TestHelpers.swift */,
+				BD0495D62AD44C4600D8959F /* ListViewController+TestHelpers.swift */,
 				BD0495D52AD44C4600D8959F /* FeedImageCell+TestHelpers.swift */,
 				BD0495D82AD44C4700D8959F /* FeedUIIntegrationTests+LoaderSpy.swift */,
 				BD0495D12AD44C4400D8959F /* FeedUIIntegrationTests+Assertions.swift */,
@@ -430,7 +430,7 @@
 				BD0495E52AD44FBE00D8959F /* FeedAcceptanceTests.swift in Sources */,
 				BDD2A1472AC71A81004660B8 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				BD0495E32AD44CA300D8959F /* FeedUIIntegrationTests.swift in Sources */,
-				BD0495DA2AD44C4700D8959F /* FeedViewController+TestHelpers.swift in Sources */,
+				BD0495DA2AD44C4700D8959F /* ListViewController+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
