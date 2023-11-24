@@ -49,20 +49,18 @@ extension FeedImageCellController: CellController {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: FeedImageCell = tableView.dequeueReusableCell()
-        
-        self.cell = cell
-        cell.locationContainer.isHidden = !viewModel.hasLocation
-        cell.locationLabel.text = viewModel.location
-        cell.descriptionLabel.text = viewModel.description
-        cell.onRetry = { [weak self] in
+        self.cell = tableView.dequeueReusableCell()
+        cell?.locationContainer.isHidden = !viewModel.hasLocation
+        cell?.locationLabel.text = viewModel.location
+        cell?.descriptionLabel.text = viewModel.description
+        cell?.onRetry = { [weak self] in
             self?.delegate.didRequestImage()
         }
-        cell.onReuse = { [weak self] in
+        cell?.onReuse = { [weak self] in
             self?.releaseCellForReuse()
         }
         delegate.didRequestImage()
-        return cell
+        return cell!
     }
     
     public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {

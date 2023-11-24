@@ -68,5 +68,101 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CC49956-4573-45C0-902B-BC975C07E763"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../EssentialFeediOS/Feed UI/Controllers/FeedImageCellController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "tableView(_:prefetchRowsAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1CC49956-4573-45C0-902B-BC975C07E763 - 6a8b6e80773b4ec1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeediOS.FeedImageCellController.tableView(_: __C.UITableView, prefetchRowsAt: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
+                  moduleName = "EssentialFeediOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Feed%20UI/Controllers/FeedImageCellController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  uuid = "1CC49956-4573-45C0-902B-BC975C07E763 - 6a8b6e80773b4ea0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialFeediOS.FeedImageCellController.tableView(_: __C.UITableView, prefetchRowsAt: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
+                  moduleName = "EssentialFeediOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Feed%20UI/Controllers/FeedImageCellController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "75">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2F5A2A4-4BA1-4021-93ED-1A04FF162C68"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../EssentialFeediOS/Shared UI/Controllers/ListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "tableView(_:prefetchRowsAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2F5A2A4-4BA1-4021-93ED-1A04FF162C68 - 76b009f737650132"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.IndexPath) -&gt; () in EssentialFeediOS.ListViewController.tableView(_: __C.UITableView, prefetchRowsAt: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
+                  moduleName = "EssentialFeediOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Shared%20UI/Controllers/ListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "130">
+               </Location>
+               <Location
+                  uuid = "F2F5A2A4-4BA1-4021-93ED-1A04FF162C68 - 76b009f737650132"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.IndexPath) -&gt; () in EssentialFeediOS.ListViewController.tableView(_: __C.UITableView, prefetchRowsAt: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
+                  moduleName = "EssentialFeediOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Shared%20UI/Controllers/ListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
