@@ -11,6 +11,16 @@ import EssentialFeediOS
 
 class FeedSnapshotTests: XCTestCase {
     
+    func test_feedWithContent() {
+        let sut = makeSUT()
+        
+        sut.display(feedWithContent())
+        
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "FEED_WITH_CONTENT_light")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "FEED_WITH_CONTENT_dark")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark, contentSize: .extraExtraExtraLarge)), named: "FEED_WITH_CONTENT_dark_extraExtraExtraLarge")
+    }
+    
     func test_feedWithFailedImageLoading() {
         let sut = makeSUT()
         
@@ -18,6 +28,7 @@ class FeedSnapshotTests: XCTestCase {
         
         assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "LIST_WITH_FAILED_IMAGE_LOADING_light")
         assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "LIST_WITH_FAILED_IMAGE_LOADING_dark")
+        assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark, contentSize: .extraExtraExtraLarge)), named: "LIST_WITH_FAILED_IMAGE_LOADING_dark_extraExtraExtraLarge")
     }
     
     private func makeSUT() -> ListViewController {
@@ -41,7 +52,7 @@ class FeedSnapshotTests: XCTestCase {
         return [
             ImageStub(description: "The East Side Gallery is an open-air gallery in Berlin. It consists of a series of murals painted directly on a 1,316 m long remnant of the Berlin Wall, located near the centre of Berlin, on Mühlenstraße in Friedrichshain-Kreuzberg. The gallery has official status as a Denkmal, or heritage-protected landmark.", location: "East Side Gallery\nMemorial in Berlin, Germany", image: UIImage.make(withColor: .red)),
             ImageStub(description: "Garth Pier is a Grade II listed structure in Bangor, Gwynedd, North Wales.", location: "Garth Pier", image: UIImage.make(withColor: .green))
-        
+            
         ]
     }
     
@@ -62,7 +73,7 @@ private extension ListViewController {
 }
 
 private class ImageStub: FeedImageCellControllerDelegate {
-
+    
     let viewModel: FeedImageViewModel
     let image: UIImage?
     weak var controller: FeedImageCellController?
