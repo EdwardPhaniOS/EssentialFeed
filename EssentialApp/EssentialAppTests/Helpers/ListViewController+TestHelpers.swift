@@ -13,6 +13,10 @@ extension ListViewController {
         refreshControl?.simulatePullToRefresh()
     }
     
+    func simulateErrorViewTap() {
+        errorView.simulateTap()
+    }
+    
     func simulateFeedImageViewNearVisible(at row: Int) {
         let ds = tableView.prefetchDataSource
         let index = IndexPath(row: row, section: feedImagesSection)
@@ -32,7 +36,7 @@ extension ListViewController {
     }
     
     var errorMessage: String? {
-        return errorView?.message
+        return errorView.message
     }
     
     @discardableResult
