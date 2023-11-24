@@ -80,7 +80,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "tableView(_:didEndDisplaying:forRowAt:)"
+            landmarkName = "tableView(_:prefetchRowsAt:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -126,8 +126,8 @@
             filePath = "../EssentialFeediOS/Shared UI/Controllers/ListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "tableView(_:prefetchRowsAt:)"
             landmarkType = "7">
             <Locations>
