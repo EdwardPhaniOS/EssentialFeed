@@ -56,7 +56,7 @@
 		BD7882CD2A75111A008CC7E2 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6235DC2A729C3500B70E7F /* Feed.storyboard */; };
 		BD7882CF2A7513F7008CC7E2 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA01CFB2A47EB9900D1FEB0 /* FeedImageCell.swift */; };
 		BD7882D02A75146B008CC7E2 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9EFDA32A7505A8007D504E /* UITableView+Dequeueing.swift */; };
-		BD7CC6422A3EE0B900502A2C /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFFA0F32A3E159D00C12FA0 /* EssentialFeediOS.framework */; };
+		BD7CC6422A3EE0B900502A2C /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFFA0F32A3E159D00C12FA0 /* EssentialFeediOS.framework */; platformFilter = ios; };
 		BD8F1D5029BD6DFD002E8C2E /* LoadFeedFromCacheUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F1D4F29BD6DFD002E8C2E /* LoadFeedFromCacheUseCaseTest.swift */; };
 		BD8F1D5329BD6FFD002E8C2E /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F1D5229BD6FFD002E8C2E /* FeedStoreSpy.swift */; };
 		BD9EFDA42A7505A8007D504E /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9EFDA32A7505A8007D504E /* UITableView+Dequeueing.swift */; };
@@ -1454,6 +1454,7 @@
 		};
 		BD7CC6442A3EE0B900502A2C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = BDFFA0F22A3E159D00C12FA0 /* EssentialFeediOS */;
 			targetProxy = BD7CC6432A3EE0B900502A2C /* PBXContainerItemProxy */;
 		};
@@ -1563,14 +1564,18 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = DRX889FW83;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vinhphan.EssentialFeed.EssentialFeediOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1583,14 +1588,18 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = DRX889FW83;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vinhphan.EssentialFeed.EssentialFeediOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1939,6 +1948,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DRX889FW83;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vinhphan.EssentialFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1958,6 +1968,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DRX889FW83;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vinhphan.EssentialFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1986,7 +1997,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2024,7 +2035,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
