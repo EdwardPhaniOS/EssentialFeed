@@ -119,54 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2F5A2A4-4BA1-4021-93ED-1A04FF162C68"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../EssentialFeediOS/Shared UI/Controllers/ListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "tableView(_:prefetchRowsAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F2F5A2A4-4BA1-4021-93ED-1A04FF162C68 - 76b009f737650132"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Foundation.IndexPath) -&gt; () in EssentialFeediOS.ListViewController.tableView(_: __C.UITableView, prefetchRowsAt: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
-                  moduleName = "EssentialFeediOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Shared%20UI/Controllers/ListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "130">
-               </Location>
-               <Location
-                  uuid = "F2F5A2A4-4BA1-4021-93ED-1A04FF162C68 - 76b009f737650132"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Foundation.IndexPath) -&gt; () in EssentialFeediOS.ListViewController.tableView(_: __C.UITableView, prefetchRowsAt: Swift.Array&lt;Foundation.IndexPath&gt;) -&gt; ()"
-                  moduleName = "EssentialFeediOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tanvinhphan/Developer/EssentialFeed/EssentialFeediOS/Shared%20UI/Controllers/ListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "87">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4902B0CD-F840-41CE-8B4B-61D4CBFEDBBE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -174,8 +126,8 @@
             filePath = "EssentialAppTests/Helpers/ListViewController+TestHelpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "errorMessage"
             landmarkType = "24">
          </BreakpointContent>
@@ -222,8 +174,8 @@
             filePath = "EssentialAppTests/Helpers/ListViewController+TestHelpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "simulateFeedImageBecomingVisibleAgain(at:)"
             landmarkType = "7">
          </BreakpointContent>
