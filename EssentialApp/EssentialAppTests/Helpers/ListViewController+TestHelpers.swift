@@ -11,13 +11,14 @@ import UIKit
 extension ListViewController {
     
     public override func loadViewIfNeeded() {
+        //Trigger viewDidLoad
         super.loadViewIfNeeded()
 
         setSmallFrameToPreventRenderingCells()
     }
     
-    func loadViewIfNeeded() {
-        //Support Unit Tests on iOS 17
+    func simulateAppearance() {
+        //Trigger viewIsAppearing on iOS 17
         if !isViewLoaded {
             loadViewIfNeeded()
             prepareForFirstAppearance()

@@ -126,8 +126,8 @@
             filePath = "EssentialAppTests/Helpers/ListViewController+TestHelpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "errorMessage"
             landmarkType = "24">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "EssentialAppTests/Helpers/ListViewController+TestHelpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "simulateFeedImageBecomingVisibleAgain(at:)"
             landmarkType = "7">
          </BreakpointContent>
