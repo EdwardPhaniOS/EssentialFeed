@@ -19,16 +19,16 @@ public final class CommentsUIComposer {
         
         let presentationAdapter = CommentsPresentationAdapter(loader: commentsLoader)
         
-        let commentsController = makeCommentsViewController(title: ImageCommentsPresenter.title)
-        commentsController.onRefresh = presentationAdapter.loadResource
+        let controller = makeCommentsViewController(title: ImageCommentsPresenter.title)
+        controller.onRefresh = presentationAdapter.loadResource
         
         presentationAdapter.presenter = LoadResourcePresenter(
-            resourceView: CommentsViewAdapter(controller: commentsController),
-            loadingView: WeakRefVirtualProxy(commentsController),
-            errorView: WeakRefVirtualProxy(commentsController),
+            resourceView: CommentsViewAdapter(controller: controller),
+            loadingView: WeakRefVirtualProxy(controller),
+            errorView: WeakRefVirtualProxy(controller),
             mapper: { ImageCommentsPresenter.map($0) })
         
-        return commentsController
+        return controller
     }
     
     private static func makeCommentsViewController(title: String) -> ListViewController {
