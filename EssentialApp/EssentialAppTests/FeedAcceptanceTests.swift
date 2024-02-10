@@ -62,7 +62,7 @@ class FeedAcceptanceTests: XCTestCase {
         
         let nav = sut.window?.rootViewController as? UINavigationController
         let vc = nav?.topViewController as! ListViewController
-        vc.loadViewIfNeeded()
+        vc.simulateAppearance()
         return vc
     }
     
@@ -82,7 +82,7 @@ class FeedAcceptanceTests: XCTestCase {
         
         let nav = feedVC.navigationController
         let vc = nav?.topViewController as! ListViewController
-        vc.loadViewIfNeeded()
+        vc.simulateAppearance()
         return vc
     }
     

@@ -12,7 +12,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     
     private(set) public var errorView = ErrorView()
     
-//    private var onViewIsAppearing: ((ListViewController) -> Void)?
+    private var onViewIsAppearing: ((ListViewController) -> Void)?
     
     public var onRefresh: (() -> Void)?
     
@@ -26,19 +26,17 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
         super.viewDidLoad()
         
         configureTableView()
-        refresh()
         
-//        onViewIsAppearing = { vc in
-//            vc.onViewIsAppearing = nil
-//            vc.refresh()
-//        }
+        onViewIsAppearing = { vc in
+            vc.onViewIsAppearing = nil
+            vc.refresh()
+        }
     }
     
-//    Available on iOS 17.0
-//    public override func viewIsAppearing(_ animated: Bool) {
-//        super.viewIsAppearing(animated)
-//        onViewIsAppearing?(self)
-//    }
+    public override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        onViewIsAppearing?(self)
+    }
     
     private func configureTableView() {
         dataSource.defaultRowAnimation = .fade
