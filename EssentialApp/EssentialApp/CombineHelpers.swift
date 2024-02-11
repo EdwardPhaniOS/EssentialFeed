@@ -12,6 +12,20 @@ import EssentialFeedAPI
 
 public extension Paginated {
     
+    init(items: [Item], loadMorePublisher: (() -> AnyPublisher<Self, Error>)?) {
+        self.init(items: items, loadMore: loadMorePublisher.map({ publisher in
+            return { completion in
+                publisher().subscribe(Subscribers.Sink(receiveCompletion: { result in
+                    if case .failure(let failure) = result {
+                        completion(.failure(failure))
+                    }
+                }, receiveValue: { result in
+                    completion(.success(result))
+                }))
+            }
+        }))
+    }
+    
     var loadMorePublisher: (() -> AnyPublisher<Self, Error>)? {
         guard let loadMore = loadMore else { return nil }
         
@@ -19,7 +33,6 @@ public extension Paginated {
             Future(loadMore)
         }.eraseToAnyPublisher
     }
-    
 }
 
 public extension HTTPClient {
