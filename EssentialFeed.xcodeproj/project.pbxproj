@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		359859E22B775458000F30E2 /* LoadMoreCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359859E12B775458000F30E2 /* LoadMoreCellController.swift */; };
 		359859E42B7754ED000F30E2 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359859E32B7754ED000F30E2 /* LoadMoreCell.swift */; };
+		359859E62B78CACA000F30E2 /* Paginated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359859E52B78CACA000F30E2 /* Paginated.swift */; };
 		BD0097FF2B0DFB05006E706C /* SharedLocalizationStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0097FE2B0DFB05006E706C /* SharedLocalizationStringTests.swift */; };
 		BD0098002B0DFC2F006E706C /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD0098022B0DFC2F006E706C /* Shared.strings */; };
 		BD01AC812A8A5D4E0082948B /* FeedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD01AC802A8A5D4E0082948B /* FeedPresenterTests.swift */; };
@@ -217,6 +218,7 @@
 /* Begin PBXFileReference section */
 		359859E12B775458000F30E2 /* LoadMoreCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCellController.swift; sourceTree = "<group>"; };
 		359859E32B7754ED000F30E2 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
+		359859E52B78CACA000F30E2 /* Paginated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paginated.swift; sourceTree = "<group>"; };
 		BD0097FE2B0DFB05006E706C /* SharedLocalizationStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationStringTests.swift; sourceTree = "<group>"; };
 		BD0098012B0DFC2F006E706C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
 		BD0098032B0DFC31006E706C /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
@@ -679,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				BDE753312B08A619008F418B /* HTTPClient.swift */,
+				359859E52B78CACA000F30E2 /* Paginated.swift */,
 			);
 			path = "Shared API";
 			sourceTree = "<group>";
@@ -1408,6 +1411,7 @@
 				BDE370E62B0DC1BA004A57C5 /* LoadResourcePresenter.swift in Sources */,
 				BDE407E72ACAEF5F00CD1BCB /* FeedImageDataCache.swift in Sources */,
 				BD717E3B29AB3CFF00EC25B0 /* LocalFeedLoader.swift in Sources */,
+				359859E62B78CACA000F30E2 /* Paginated.swift in Sources */,
 				BD15B5DE2AA7597000FEC09F /* FeedImageDataStore.swift in Sources */,
 				BDF9F74829505BCE00859FCB /* EssentialFeed.docc in Sources */,
 				BDEF2A952B0F4D7200B9E933 /* ImageCommentsPresenter.swift in Sources */,
