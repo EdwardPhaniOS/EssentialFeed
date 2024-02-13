@@ -393,21 +393,6 @@ class FeedUIIntegrationTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    func test_loadMoreCompletion_dispatchesFromBackgroundToMainThread() {
-        let (sut, loader) = makeSUT()
-        sut.simulateAppearance()
-        loader.completeFeedLoading(at: 0)
-        sut.simulateLoadMoreFeedAction()
-        
-        let exp = expectation(description: "Wait for background queue")
-        DispatchQueue.global().async {
-            loader.completeLoadMore()
-            exp.fulfill()
-        }
-        
-        wait(for: [exp], timeout: 1.0)
-    }
-    
     func test_loadImageDataCompletion_dispatchesFromBackgroundToMainThread() {
         let (sut, loader) = makeSUT()
         sut.simulateAppearance()
@@ -442,7 +427,25 @@ class FeedUIIntegrationTests: XCTestCase {
         assertThat(sut, isRendering: [])
     }
     
-    func test_loadMoreAction_requestMoreFromLoader() {
+    func test_tapOnLoadMoreErrorView_loadsMore() {
+        let (sut, loader) = makeSUT()
+        sut.simulateAppearance()
+        loader.completeFeedLoading()
+        
+        sut.simulateLoadMoreFeedAction()
+        XCTAssertEqual(loader.loadMoreCallCount, 1)
+        
+        sut.simulateTapOnLoadMoreFeedError()
+        XCTAssertEqual(loader.loadMoreCallCount, 1)
+        
+        loader.completeLoadMoreWithError()
+        sut.simulateTapOnLoadMoreFeedError()
+        XCTAssertEqual(loader.loadMoreCallCount, 2)
+    }
+    
+    // MARK: - Load More Tests
+    
+    func test_loadMoreActions_requestMoreFromLoader() {
         let (sut, loader) = makeSUT()
         sut.simulateAppearance()
         loader.completeFeedLoading()
@@ -490,20 +493,19 @@ class FeedUIIntegrationTests: XCTestCase {
         XCTAssertFalse(sut.isShowingLoadMoreFeedIndicator, "Expected no loading indicator once user initiated loading completes with error")
     }
     
-    func test_tapOnLoadMoreErrorView_loadsMore() {
+    func test_loadMoreCompletion_dispatchesFromBackgroundToMainThread() {
         let (sut, loader) = makeSUT()
         sut.simulateAppearance()
-        loader.completeFeedLoading()
-        
+        loader.completeFeedLoading(at: 0)
         sut.simulateLoadMoreFeedAction()
-        XCTAssertEqual(loader.loadMoreCallCount, 1)
         
-        sut.simulateTapOnLoadMoreFeedError()
-        XCTAssertEqual(loader.loadMoreCallCount, 1)
+        let exp = expectation(description: "Wait for background queue")
+        DispatchQueue.global().async {
+            loader.completeLoadMore()
+            exp.fulfill()
+        }
         
-        loader.completeLoadMoreWithError()
-        sut.simulateTapOnLoadMoreFeedError()
-        XCTAssertEqual(loader.loadMoreCallCount, 2)
+        wait(for: [exp], timeout: 1.0)
     }
     
     //MARK: - Helers
