@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354DDAFE2B7CC0B30063E3F9 /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354DDAFD2B7CC0B30063E3F9 /* NullStore.swift */; };
 		BD03D3EE2AC87A4800281791 /* FeedImageDataLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD03D3ED2AC87A4800281791 /* FeedImageDataLoaderCacheDecorator.swift */; };
 		BD03D3F02AC87ABC00281791 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD03D3EF2AC87ABC00281791 /* FeedImageDataLoaderCacheDecoratorTests.swift */; };
 		BD03D3F22AC8812A00281791 /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD03D3F12AC8812A00281791 /* FeedImageDataLoaderSpy.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		354DDAFD2B7CC0B30063E3F9 /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		BD03D3ED2AC87A4800281791 /* FeedImageDataLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 		BD03D3EF2AC87ABC00281791 /* FeedImageDataLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		BD03D3F12AC8812A00281791 /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				BDD2A1442AC71995004660B8 /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				BD03D3ED2AC87A4800281791 /* FeedImageDataLoaderCacheDecorator.swift */,
 				BD52AFDE2AF934610072DB91 /* CombineHelpers.swift */,
+				354DDAFD2B7CC0B30063E3F9 /* NullStore.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				BDD2A1452AC71995004660B8 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 				BD0495CC2AD44BFB00D8959F /* FeedUIComposer.swift in Sources */,
 				BD0495CA2AD44BFB00D8959F /* WeakRefVirtualProxy.swift in Sources */,
+				354DDAFE2B7CC0B30063E3F9 /* NullStore.swift in Sources */,
 				BD03D3EE2AC87A4800281791 /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
