@@ -83,7 +83,6 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
     }
     
     private func expect(_ sut: LocalFeedImageDataLoader, toCompleteWith expectedResult: Result<Data, Error>, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
-        let exp = expectation(description: "Wait for load completion")
         
         action()
         

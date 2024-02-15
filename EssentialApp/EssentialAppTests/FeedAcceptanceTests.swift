@@ -38,8 +38,8 @@ class FeedAcceptanceTests: XCTestCase {
     
     func test_onLaunch_displaysCachedRemoteFeedWhenCustomerHasNoConnectivity() {
         let sharedStore = InMemoryFeedStore.empty
-        sharedStore.insert(makeImageData0(), for: URL(string: "http://feed.com/image-0")!, completion: { _ in })
-        sharedStore.insert(makeImageData1(), for: URL(string: "http://feed.com/image-1")!, completion: { _ in })
+        try? sharedStore.insert(makeImageData0(), for: URL(string: "http://feed.com/image-0")!)
+        try? sharedStore.insert(makeImageData1(), for: URL(string: "http://feed.com/image-1")!)
         
         let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
         onlineFeed.simulateFeedImageViewVisible(at: 0)
