@@ -71,7 +71,7 @@ extension FeedUIIntegrationTests {
             }
         }
         
-        private var imageRequests = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
+        private var imageRequests = [(url: URL, result: Swift.Result<Data, Error>)]()
         
         var loadedImageURLs: [URL] {
             return imageRequests.map { $0.url }
@@ -79,9 +79,10 @@ extension FeedUIIntegrationTests {
         
         private(set) var cancelledImageURLs = [URL]()
         
-        func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
-            imageRequests.append((url, completion))
-            return TaskSpy { [weak self] in self?.cancelledImageURLs.append(url) }
+        func loadImageData(from url: URL) throws -> Data {
+            let data = anyData()
+            imageRequests.append((url, .success(data)))
+            return data
         }
         
         func cancelImageDataLoad(from url: URL) {
@@ -91,12 +92,12 @@ extension FeedUIIntegrationTests {
         }
         
         func completeImageLoading(with imageData: Data = Data(), at index: Int = 0) {
-            imageRequests[index].completion(.success(imageData))
+            imageRequests[index].result = .success(imageData)
         }
         
         func completeImageLoadingWithError(at index: Int = 0) {
             let error = NSError(domain: "an error", code: 0)
-            imageRequests[index].completion(.failure(error))
+            imageRequests[index].result = .failure(error)
         }
     }
 }
