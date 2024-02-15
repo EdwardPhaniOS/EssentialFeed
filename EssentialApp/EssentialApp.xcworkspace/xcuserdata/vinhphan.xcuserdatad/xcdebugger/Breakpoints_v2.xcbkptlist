@@ -36,5 +36,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9337BFF7-8454-4DB5-975C-4172142E780C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialAppTests/FeedImageDataLoaderWithFallbackCompositeTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "loadImageData(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9337BFF7-8454-4DB5-975C-4172142E780C - 5992dc52e76cc2e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EssentialAppTests.FeedImageDataLoaderWithFallbackCompositeTests.LoaderSpy.loadImageData(from: Foundation.URL, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; EssentialFeed.FeedImageDataLoaderTask"
+                  moduleName = "EssentialAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinhphan/Documents/EssentialFeed/EssentialApp/EssentialAppTests/FeedImageDataLoaderWithFallbackCompositeTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "652">
+               </Location>
+               <Location
+                  uuid = "9337BFF7-8454-4DB5-975C-4172142E780C - 95bea2bc6427672e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in EssentialAppTests.FeedImageDataLoaderWithFallbackCompositeTests.LoaderSpy.loadImageData(from: Foundation.URL, completion: (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; EssentialFeed.FeedImageDataLoaderTask"
+                  moduleName = "EssentialAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vinhphan/Documents/EssentialFeed/EssentialApp/EssentialAppTests/FeedImageDataLoaderWithFallbackCompositeTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
