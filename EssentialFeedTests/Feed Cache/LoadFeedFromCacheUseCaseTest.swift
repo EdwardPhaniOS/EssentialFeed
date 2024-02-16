@@ -79,18 +79,18 @@ class LoadFeedFromCacheUseCaseTest: XCTestCase {
     
     func test_load_hasNoSideEffectOnRetrievalError() {
         let (sut, store) = makeSUT()
-        
-        sut.load { _ in }
         store.completeRetrieval(with: anyNSError())
         
+        sut.load { _ in }
+       
         XCTAssertEqual(store.receivedMessage, [.retrieve])
     }
     
     func test_load_hasNoSideEffectOnEmptyCache() {
         let (sut, store) = makeSUT()
+        store.completeRetrievalWithEmptyCache()
         
         sut.load { _ in }
-        store.completeRetrievalWithEmptyCache()
         
         XCTAssertEqual(store.receivedMessage, [.retrieve])
     }
@@ -101,9 +101,10 @@ class LoadFeedFromCacheUseCaseTest: XCTestCase {
         let lessThanSevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7).adding(seconds: 1)
         let (sut, store) = makeSUT { fixedCurrentDate }
         
-        sut.load { _ in }
         store.completeRetrieval(with: feed.local, timestamp: lessThanSevenDaysOldTimestamp)
         
+        sut.load { _ in }
+       
         XCTAssertEqual(store.receivedMessage, [.retrieve])
     }
     
@@ -113,23 +114,11 @@ class LoadFeedFromCacheUseCaseTest: XCTestCase {
         let sevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7)
         let (sut, store) = makeSUT { fixedCurrentDate }
         
-        sut.load { _ in }
         store.completeRetrieval(with: feed.local, timestamp: sevenDaysOldTimestamp)
         
+        sut.load { _ in }
+        
         XCTAssertEqual(store.receivedMessage, [.retrieve])
-    }
-    
-    func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
-        let store = FeedStoreSpy()
-        var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
-        
-        var receivedResults = [LocalFeedLoader.LoadResult]()
-        sut?.load(completion: { receivedResults.append($0) })
-        
-        sut = nil
-        store.completeRetrievalWithEmptyCache()
-        
-        XCTAssertTrue(receivedResults.isEmpty)
     }
     
     func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {

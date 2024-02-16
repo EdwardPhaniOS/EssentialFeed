@@ -16,31 +16,25 @@ final class CacheFeedUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessage, [])
     }
     
-    func test_save_requestCacheDeletion() {
-        let (sut, store) = makeSUT()
-        sut.save(uniqueItemFeed().models, completion: { _ in })
-        
-        XCTAssertEqual(store.receivedMessage, [.deleteCacheFeed])
-    }
-    
     func test_save_doesNotRequestCacheInsertionOnDeletionError() {
         let (sut, store) = makeSUT()
         
-        sut.save(uniqueItemFeed().models, completion: { _ in })
         let deletionError = anyNSError()
         store.completeDeletion(with: deletionError)
         
+        sut.save(uniqueItemFeed().models, completion: { _ in })
+       
         XCTAssertEqual(store.receivedMessage, [.deleteCacheFeed])
     }
     
     func test_save_requestNewCacheInsertionWithTimeStampOnSuccessfulDeletion() {
         let timeStamp = Date()
-        let (sut, store) = makeSUT(currentDate: { timeStamp })
         let feed = uniqueItemFeed()
-        
-        sut.save(feed.models, completion: { _ in })
+        let (sut, store) = makeSUT(currentDate: { timeStamp })
         store.completeDeletionSuccessfully()
         
+        sut.save(feed.models, completion: { _ in })
+       
         XCTAssertEqual(store.receivedMessage, [.deleteCacheFeed, .insert(feed.local, timeStamp)])
     }
     
@@ -69,36 +63,6 @@ final class CacheFeedUseCaseTests: XCTestCase {
         }
     }
     
-    func test_save_doesNotDeliverDeletionErrorAfterSUTInstanceHasBeenDeallocated() {
-        let store = FeedStoreSpy()
-        var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
-        
-        var receivedResults = [LocalFeedLoader.SaveResult]()
-        sut?.save(uniqueItemFeed().models) { error in
-            receivedResults.append(error)
-        }
-        
-        sut = nil
-        store.completeDeletion(with: anyNSError())
-        XCTAssertTrue(receivedResults.isEmpty)
-    }
-    
-    func test_save_doesNotDeliverInsertionErrorAfterSUTInstanceHasBeenDeallocated() {
-        let store = FeedStoreSpy()
-        var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
-        
-        var receivedResults = [LocalFeedLoader.SaveResult]()
-        sut?.save(uniqueItemFeed().models) { error in
-            receivedResults.append(error)
-        }
-        
-        store.completeDeletionSuccessfully()
-        sut = nil
-        store.completeInsertion(with: anyNSError())
-        
-        XCTAssertTrue(receivedResults.isEmpty)
-    }
-    
     func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #file, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
         let store = FeedStoreSpy()
         let sut = LocalFeedLoader(store: store, currentDate: currentDate)
@@ -111,6 +75,8 @@ final class CacheFeedUseCaseTests: XCTestCase {
         var receivedError: Error?
         let exp = expectation(description: "Wait for save completion")
         
+        action()
+        
         sut.save(uniqueItemFeed().models) { receivedResult in
             switch receivedResult {
             case let .failure(saveError):
@@ -120,8 +86,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
             }
             exp.fulfill()
         }
-        action()
-        
+       
         wait(for: [exp], timeout: 1.0)
         
         XCTAssertEqual(receivedError as? NSError, error as? NSError, file: file, line: line)

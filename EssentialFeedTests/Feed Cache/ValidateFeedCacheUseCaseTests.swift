@@ -19,8 +19,9 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
     func test_validateCache_deleteCacheOnRetrievalError() {
         let (sut, store) = makeSUT()
         
-        sut.validateCache(completion: { _ in })
         store.completeRetrieval(with: anyNSError())
+        
+        sut.validateCache(completion: { _ in })
         
         XCTAssertEqual(store.receivedMessage, [.retrieve, .deleteCacheFeed])
     }
@@ -52,9 +53,10 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         let sevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7)
         let (sut, store) = makeSUT { fixedCurrentDate }
         
-        sut.validateCache(completion: { _ in })
         store.completeRetrieval(with: feed.local, timestamp: sevenDaysOldTimestamp)
         
+        sut.validateCache(completion: { _ in })
+       
         XCTAssertEqual(store.receivedMessage, [.retrieve, .deleteCacheFeed])
     }
     
@@ -147,6 +149,8 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         
         let exp = expectation(description: "Wait for load completion")
         
+        action()
+        
         sut.validateCache { receivedResult in
             switch (receivedResult, expectedResult) {
             case (.success, .success):
@@ -161,8 +165,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
             
             exp.fulfill()
         }
-        
-        action()
+       
         wait(for: [exp], timeout: 1.0)
     }
 }
