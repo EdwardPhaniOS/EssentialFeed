@@ -86,9 +86,7 @@ extension FeedUIIntegrationTests {
         }
         
         func cancelImageDataLoad(from url: URL) {
-            let _ = TaskSpy { [weak self] in
-                self?.cancelledImageURLs.append(url)
-            }
+            cancelledImageURLs.append(url)
         }
         
         func completeImageLoading(with imageData: Data = Data(), at index: Int = 0) {
