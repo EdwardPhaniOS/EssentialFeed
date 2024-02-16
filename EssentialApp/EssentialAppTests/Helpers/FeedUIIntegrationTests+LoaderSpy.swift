@@ -64,14 +64,7 @@ extension FeedUIIntegrationTests {
         
         //MARK: - FeedImageDataLoader
         
-        private struct TaskSpy: FeedImageDataLoaderTask {
-            let cancelCallback: () -> Void
-            func cancel() {
-                cancelCallback()
-            }
-        }
-        
-        private var imageRequests = [(url: URL, result: Swift.Result<Data, Error>)]()
+        private var imageRequests = [(url: URL, publisher: PassthroughSubject<Data, Error>)]()
         
         var loadedImageURLs: [URL] {
             return imageRequests.map { $0.url }
@@ -79,23 +72,21 @@ extension FeedUIIntegrationTests {
         
         private(set) var cancelledImageURLs = [URL]()
         
-        func loadImageData(from url: URL) throws -> Data {
-            let data = anyData()
-            imageRequests.append((url, .success(data)))
-            return data
-        }
-        
-        func cancelImageDataLoad(from url: URL) {
-            cancelledImageURLs.append(url)
+        func loadImageDataPublisher(from url: URL) -> AnyPublisher<Data, Error> {
+            let publisher = PassthroughSubject<Data, Error>()
+            imageRequests.append((url, publisher))
+            return publisher.handleEvents(receiveCancel: { [weak self] in
+                self?.cancelledImageURLs.append(url)
+            }).eraseToAnyPublisher()
         }
         
         func completeImageLoading(with imageData: Data = Data(), at index: Int = 0) {
-            imageRequests[index].result = .success(imageData)
+            imageRequests[index].publisher.send(imageData)
+            imageRequests[index].publisher.send(completion: .finished)
         }
         
         func completeImageLoadingWithError(at index: Int = 0) {
-            let error = NSError(domain: "an error", code: 0)
-            imageRequests[index].result = .failure(error)
+            imageRequests[index].publisher.send(completion: .failure(anyNSError()))
         }
     }
 }
