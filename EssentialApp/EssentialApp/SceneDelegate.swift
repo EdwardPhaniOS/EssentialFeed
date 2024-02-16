@@ -72,7 +72,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
-        localFeedLoader.validateCache { _ in }
+        do {
+            try localFeedLoader.validateCache()
+        } catch {
+            if #available(iOS 14.0, *) {
+                var logger = Logger(subsystem: "com.essentialdeveloper.EssentialAppCaseStudy", category: "main")
+                logger.fault("Failed validate cache with error with error: \(error.localizedDescription)")
+            }
+        }
     }
     
     func configureWindow() {
