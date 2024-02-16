@@ -132,6 +132,8 @@ class LoadFeedFromCacheUseCaseTest: XCTestCase {
     private func expect(_ sut: LocalFeedLoader, toCompleteWith expectedResult: LocalFeedLoader.LoadResult, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
         
+        action()
+        
         sut.load { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedImages), .success(expectedImages)):
@@ -143,7 +145,6 @@ class LoadFeedFromCacheUseCaseTest: XCTestCase {
             }
             exp.fulfill()
         }
-        action()
         wait(for: [exp], timeout: 1.0)
     }
 }
